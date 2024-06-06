@@ -11,9 +11,7 @@ import Select from 'react-select'
 
 export const App = ({ position = [0, 0, 2.5], fov = 25 }) => {
     const [text, setText] = useState('');
-    const [selected, setSelected] = useState(fonts[0])
-
-    console.log('selected: ', selected)
+    const [font, setFont] = useState(fonts[0])
 
     const handleTextChange = (event) => {
         setText(event.target.value);
@@ -39,10 +37,10 @@ export const App = ({ position = [0, 0, 2.5], fov = 25 }) => {
         <div className='main-wrapper'>
             <div className='text-box'>
                 <Select
-                    value={fonts.find((option) => option.value === selected)}
+                    value={fonts.find((option) => option.value === font)}
                     placeholder='Seleccione un tipo de letra'
                     options={fonts}
-                    onChange={(value) => setSelected(value)}
+                    onChange={(value) => setFont(value)}
                     styles={customStyles}
                     isSearchable={false}
                 />
@@ -53,9 +51,8 @@ export const App = ({ position = [0, 0, 2.5], fov = 25 }) => {
                 <Environment files="https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/potsdamer_platz_1k.hdr" />
                 <CameraRig>
                     <Backdrop />
-
                     <Center>
-                        <Shirt text={text} font={selected} />
+                        <Shirt text={text} font={font} />
                     </Center>
                 </CameraRig>
             </Canvas>
