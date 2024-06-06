@@ -15,7 +15,7 @@ export function Overlay() {
     return (
         <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}>
             <motion.header initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} transition={transition}>
-                <Logo width="40" height="40" />
+                {/* <Logo width="40" height="40" /> */}
                 <motion.div animate={{ x: snap.intro ? 0 : 100, opacity: snap.intro ? 1 : 0 }} transition={transition}>
                     <AiOutlineShopping size="3em" />
                 </motion.div>
@@ -29,7 +29,8 @@ export function Overlay() {
                                 initial={{ x: 100, opacity: 0 }}
                                 animate={{ x: 0, opacity: 1 }}
                                 transition={{ type: 'spring', damping: 5, stiffness: 40, restDelta: 0.001, duration: 0.3 }}>
-                                <h1>LET'S DO IT.</h1>
+                                <h1>LOBIS</h1>
+
                             </motion.div>
                             <div className="support--content">
                                 <motion.div
@@ -46,11 +47,10 @@ export function Overlay() {
                                         delayChildren: 0.2
                                     }}>
                                     <p>
-                                        Create your unique and exclusive shirt with our brand-new 3D customization tool. <strong>Unleash your imagination</strong> and define your
-                                        own style.
+                                        Personaliza tu <strong>buso de egresados</strong> con nuestra colección minimalista. Tu estilo es nuestra prioridad.
                                     </p>
                                     <button style={{ background: snap.color }} onClick={() => (state.intro = false)}>
-                                        CUSTOMIZE IT <AiOutlineHighlight size="1.3em" />
+                                        DISEÑALO! <AiOutlineHighlight size="1.3em" />
                                     </button>
                                 </motion.div>
                             </div>
@@ -75,7 +75,7 @@ function Customizer() {
                     <div key={color} className={`circle`} style={{ background: color }} onClick={() => (state.color = color)}></div>
                 ))}
             </div>
-            <div className="decals">
+            {/* <div className="decals">
                 <div className="decals--container">
                     {snap.decals.map((decal) => (
                         <div key={decal} className={`decal`} onClick={() => (state.decal = decal)}>
@@ -83,7 +83,7 @@ function Customizer() {
                         </div>
                     ))}
                 </div>
-            </div>
+            </div> */}
             <button
                 className="share"
                 style={{ background: snap.color }}
@@ -93,11 +93,11 @@ function Customizer() {
                     link.setAttribute('href', document.querySelector('canvas').toDataURL('image/png').replace('image/png', 'image/octet-stream'))
                     link.click()
                 }}>
-                DOWNLOAD
+                DESCARGAR
                 <AiFillCamera size="1.3em" />
             </button>
             <button className="exit" style={{ background: snap.color }} onClick={() => (state.intro = true)}>
-                GO BACK
+                VOLVER
                 <AiOutlineArrowLeft size="1.3em" />
             </button>
         </div>

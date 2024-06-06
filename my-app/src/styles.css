@@ -39,6 +39,29 @@ body {
   }
 }
 
+.main-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  input {
+    z-index: 100000;
+    position: absolute;
+    bottom: 6rem;
+    left: 44%;
+  }
+}
+
+.text-wrapper {
+  right: -7rem;
+  width: 200px;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 canvas {
   opacity: 0;
   touch-action: none;
@@ -78,7 +101,8 @@ section {
 
 .section--container {
   margin-top: 5vh;
-  margin-left: 5vw;
+  margin-right: 20vw;
+  /* margin-left: 5vw; */
 }
 
 .section--container.hidden {
@@ -314,4 +338,30 @@ button:hover {
 
 button {
   z-index: 50000;
+}
+
+.group {
+  width: 100px;
+  width: fit-content;
+}
+
+.controls {
+  display: flex;
+  border: 1px solid #ccc;
+  border-top: 0;
+  padding: 10px;
+}
+
+.controls-right {
+  margin-left: auto;
+}
+
+.state {
+  margin: 10px 0;
+  font-family: monospace;
+}
+
+.state-title {
+  color: #999;
+  text-transform: uppercase;
 }
