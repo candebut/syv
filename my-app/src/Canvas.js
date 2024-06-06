@@ -1,23 +1,51 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { useGLTF, useTexture, AccumulativeShadows, RandomizedLight, Decal, Environment, Center } from '@react-three/drei';
 import { easing } from 'maath';
 import { useSnapshot } from 'valtio';
 import { state } from './store';
-import * as THREE from 'three';
 import { Html } from '@react-three/drei';
+import { fonts } from './data'
+import Select from 'react-select'
 // import html2canvas from 'html2canvas';
 
 export const App = ({ position = [0, 0, 2.5], fov = 25 }) => {
     const [text, setText] = useState('');
+    const [selected, setSelected] = useState(fonts[0])
 
     const handleTextChange = (event) => {
         setText(event.target.value);
     };
 
+    const customStyles = {
+        control: (provided) => ({
+            ...provided,
+            // background: 'transparent',
+            display: 'flex',
+            // width: '7em',
+            zIndex: 10000
+        }),
+        menu: (provided) => ({
+            ...provided,
+
+            // width: '4em',
+            zIndex: 10000
+        }),
+    };
+
     return (
         <div className='main-wrapper'>
-            <input type="text" value={text} onChange={handleTextChange} placeholder="Ingrese su texto" />
+            <div className='text-box'>
+                <Select
+                    value={fonts.find((option) => option.value === selected)}
+                    placeholder='Seleccione un tipo de letra'
+                    options={fonts}
+                    onChange={(value) => setSelected(value)}
+                    styles={customStyles}
+                    isSearchable={false}
+                />
+                <input type="text" value={text} onChange={handleTextChange} placeholder="Ingrese su texto" />
+            </div>
             <Canvas shadows camera={{ position, fov }} gl={{ preserveDrawingBuffer: true }} eventSource={document.getElementById('root')} eventPrefix="client">
                 <ambientLight intensity={0.5} />
                 <Environment files="https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/potsdamer_platz_1k.hdr" />
