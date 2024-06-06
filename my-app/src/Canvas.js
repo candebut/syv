@@ -10,6 +10,8 @@ import Select from 'react-select'
 // import html2canvas from 'html2canvas';
 
 export const App = ({ position = [0, 0, 2.5], fov = 25 }) => {
+    const snap = useSnapshot(state);
+    console.log('state: ', state)
     const [text, setText] = useState('');
     const [font, setFont] = useState(fonts[0])
 
@@ -32,20 +34,23 @@ export const App = ({ position = [0, 0, 2.5], fov = 25 }) => {
             zIndex: 10000
         }),
     };
-
+    console.log('snap: ', snap)
     return (
         <div className='main-wrapper'>
-            <div className='text-box'>
-                <Select
-                    value={fonts.find((option) => option.value === font)}
-                    placeholder='Seleccione un tipo de letra'
-                    options={fonts}
-                    onChange={(value) => setFont(value)}
-                    styles={customStyles}
-                    isSearchable={false}
-                />
-                <input type="text" value={text} onChange={handleTextChange} placeholder="Ingrese su texto" />
-            </div>
+            {snap.intro ? null : (
+
+                <div className='text-box'>
+                    <Select
+                        value={fonts.find((option) => option.value === font)}
+                        placeholder='Seleccione un tipo de letra'
+                        options={fonts}
+                        onChange={(value) => setFont(value)}
+                        styles={customStyles}
+                        isSearchable={false}
+                    />
+                    <input type="text" value={text} onChange={handleTextChange} placeholder="Ingrese su texto" />
+                </div>
+            )}
             <Canvas shadows camera={{ position, fov }} gl={{ preserveDrawingBuffer: true }} eventSource={document.getElementById('root')} eventPrefix="client">
                 <ambientLight intensity={0.5} />
                 <Environment files="https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/potsdamer_platz_1k.hdr" />

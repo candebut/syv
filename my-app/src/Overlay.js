@@ -57,7 +57,7 @@ export function Overlay() {
                         </div>
                     </motion.section>
                 ) : (
-                    <motion.section id='option-2' key="custom" {...config}>
+                    <motion.section key="custom" {...config}>
                         <Customizer />
                     </motion.section>
                 )}
