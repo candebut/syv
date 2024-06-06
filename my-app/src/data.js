@@ -25,3 +25,49 @@ export const fonts = [
     },
 
 ];
+
+export const fontSizes = [
+    {
+        value: '10px',
+        label: (
+            <p className='font-10px'>XXS</p>
+        ),
+    },
+    {
+        value: "12px",
+        label: (
+            <p className='font-12px'>XS</p>
+        ),
+    },
+    {
+        value: "16px",
+        label: (
+            <p className='font-16px'>S</p>
+        ),
+    },
+    {
+        value: '20px',
+        label: (
+            <p className='font-20px'>M</p>
+        ),
+    },
+    {
+        value: '24px',
+        label: (
+            <p className='font-24px'>L</p>
+        ),
+    },
+    {
+        value: '32px',
+        label: (
+            <p className='font-32px'>XL</p>
+        ),
+    },
+    {
+        value: '40px',
+        label: (
+            <p className='font-40px'>XXL</p>
+        ),
+    },
+
+];

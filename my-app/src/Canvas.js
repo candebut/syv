@@ -5,15 +5,15 @@ import { easing } from 'maath';
 import { useSnapshot } from 'valtio';
 import { state } from './store';
 import { Html } from '@react-three/drei';
-import { fonts } from './data'
+import { fonts, fontSizes } from './data'
 import Select from 'react-select'
 // import html2canvas from 'html2canvas';
 
 export const App = ({ position = [0, 0, 2.5], fov = 25 }) => {
     const snap = useSnapshot(state);
-    console.log('state: ', state)
     const [text, setText] = useState('');
     const [font, setFont] = useState(fonts[0])
+    const [fontSize, setFontSize] = useState(fontSizes[0])
 
     const handleTextChange = (event) => {
         setText(event.target.value);
@@ -34,7 +34,7 @@ export const App = ({ position = [0, 0, 2.5], fov = 25 }) => {
             zIndex: 10000
         }),
     };
-    console.log('snap: ', snap)
+
     return (
         <div className='main-wrapper'>
             {snap.intro ? null : (
@@ -49,6 +49,19 @@ export const App = ({ position = [0, 0, 2.5], fov = 25 }) => {
                         isSearchable={false}
                     />
                     <input type="text" value={text} onChange={handleTextChange} placeholder="Ingrese su texto" />
+                    <div className="color-options">
+                        {snap.colors.map((color) => (
+                            <div key={color} className={`circle`} style={{ background: color }} onClick={() => (state.textColor = color)}></div>
+                        ))}
+                    </div>
+                    <Select
+                        value={fontSizes.find((option) => option.value === fontSize)}
+                        placeholder='Seleccione un tamaño de letra'
+                        options={fontSizes}
+                        onChange={(value) => setFontSize(value)}
+                        styles={customStyles}
+                        isSearchable={false}
+                    />
                 </div>
             )}
             <Canvas shadows camera={{ position, fov }} gl={{ preserveDrawingBuffer: true }} eventSource={document.getElementById('root')} eventPrefix="client">
@@ -57,7 +70,7 @@ export const App = ({ position = [0, 0, 2.5], fov = 25 }) => {
                 <CameraRig>
                     <Backdrop />
                     <Center>
-                        <Shirt text={text} font={font} />
+                        <Shirt text={text} font={font} fontSize={fontSize} />
                     </Center>
                 </CameraRig>
             </Canvas>
@@ -67,7 +80,7 @@ export const App = ({ position = [0, 0, 2.5], fov = 25 }) => {
 
 function Backdrop() {
     const shadows = useRef();
-    useFrame((state, delta) => easing.dampC(shadows.current.getMesh().material.color, state.color, 0.25, delta));
+    // useFrame((state, delta) => easing.dampC(shadows.current.getMesh().material.color, state.color, 0.25, delta));
     return (
         <AccumulativeShadows ref={shadows} temporal frames={60} alphaTest={0.85} scale={10} rotation={[Math.PI / 2, 0, 0]} position={[0, 0, -0.14]}>
             <RandomizedLight amount={4} radius={9} intensity={0.55} ambient={0.25} position={[5, 5, -10]} />
@@ -87,6 +100,7 @@ function CameraRig({ children }) {
 }
 
 function Shirt(props) {
+    console.log('state.textColor: ', state.textColor)
     const snap = useSnapshot(state);
     const [texture, setTexture] = useState(null);
     const { nodes, materials } = useGLTF('/shirt_baked_collapsed.glb');
@@ -126,7 +140,7 @@ function Shirt(props) {
             </mesh>
             {props.text && (
                 <Html position={[0, 0.1, 0.1, 0.15]} className='text-wrapper'>
-                    <div style={{ fontFamily: props.font.value, fontSize: 40, color: 'black' }}>{props.text}</div>
+                    <div style={{ fontFamily: props.font.value, fontSize: props.fontSize.value, color: snap.textColor }}>{props.text}</div>
                 </Html>
             )}
         </group>
