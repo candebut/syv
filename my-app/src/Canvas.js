@@ -13,6 +13,8 @@ export const App = ({ position = [0, 0, 2.5], fov = 25 }) => {
     const [text, setText] = useState('');
     const [selected, setSelected] = useState(fonts[0])
 
+    console.log('selected: ', selected)
+
     const handleTextChange = (event) => {
         setText(event.target.value);
     };
@@ -53,7 +55,7 @@ export const App = ({ position = [0, 0, 2.5], fov = 25 }) => {
                     <Backdrop />
 
                     <Center>
-                        <Shirt text={text} />
+                        <Shirt text={text} font={selected} />
                     </Center>
                 </CameraRig>
             </Canvas>
@@ -113,6 +115,8 @@ function Shirt(props) {
     //     }
     // }, [props.text]);
 
+    console.log('props.font: ', props.font)
+
     return (
         <group>
             <mesh castShadow geometry={nodes.T_Shirt_male.geometry} material={materials.lambert1} material-roughness={1} {...props} dispose={null}>
@@ -120,7 +124,7 @@ function Shirt(props) {
             </mesh>
             {props.text && (
                 <Html position={[0, 0.1, 0.1, 0.15]} className='text-wrapper'>
-                    <div style={{ fontFamily: 'Comic Sans', fontSize: 40, color: 'black' }}>{props.text}</div>
+                    <div style={{ fontFamily: props.font.value, fontSize: 40, color: 'black' }}>{props.text}</div>
                 </Html>
             )}
         </group>

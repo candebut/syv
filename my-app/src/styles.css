@@ -381,3 +381,11 @@ button {
   color: #999;
   text-transform: uppercase;
 }
+
+.font-times {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.font-arial {
+  font-family: Arial, Helvetica, sans-serif;
+}
