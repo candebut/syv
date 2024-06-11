@@ -1,13 +1,16 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { useGLTF, useTexture, AccumulativeShadows, RandomizedLight, Decal, Environment, Center } from '@react-three/drei';
 import { easing } from 'maath';
 import { useSnapshot } from 'valtio';
-import { state } from './store';
+import { state } from '../store';
 import { Html } from '@react-three/drei';
-import { fonts, fontSizes } from './data'
+import { fonts, fontSizes } from '../data'
 import Select from 'react-select'
-// import html2canvas from 'html2canvas';
+import * as THREE from 'three';
+import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
+import { FontLoader } from 'three/addons/loaders/FontLoader.js';
+// import { TextTexture } from 'three/addons/geometries/TextTexture.js';
 
 export const App = ({ position = [0, 0, 2.5], fov = 25 }) => {
     const snap = useSnapshot(state);
@@ -22,15 +25,11 @@ export const App = ({ position = [0, 0, 2.5], fov = 25 }) => {
     const customStyles = {
         control: (provided) => ({
             ...provided,
-            // background: 'transparent',
             display: 'flex',
-            // width: '7em',
             zIndex: 10000
         }),
         menu: (provided) => ({
             ...provided,
-
-            // width: '4em',
             zIndex: 10000
         }),
     };
@@ -38,7 +37,6 @@ export const App = ({ position = [0, 0, 2.5], fov = 25 }) => {
     return (
         <div className='main-wrapper'>
             {snap.intro ? null : (
-
                 <div className='text-box'>
                     <Select
                         value={fonts.find((option) => option.value === font)}
@@ -107,31 +105,26 @@ function Shirt(props) {
     useFrame((state, delta) => easing.dampC(materials.lambert1.color, snap.color, 0.25, delta));
 
     // Convertir el texto ingresado en una imagen
-    // const generateTextureFromText = async () => {
-    //     if (props.text && materials.lambert1.map) {
-    //         const texture = new TextTexture({
-    //             textAlign: 'center',
-    //             fontFamily: 'Arial',
-    //             fontSize: 48,
-    //             text: props.text,
-    //             color: 'black', // Font color
-    //             backgroundColor: 'white', // Background color
-    //         });
-    //         setTexture(texture);
-    //     }
-    // };
+    const generateTextureFromText = async () => {
+        if (props.text && materials.lambert1.map) {
+            const texture = new TextGeometry({
+                textAlign: 'center',
+                fontFamily: 'Arial',
+                fontSize: 48,
+                text: props.text,
+                color: 'black', // Font color
+                backgroundColor: 'white', // Background color
+            });
+            setTexture(texture);
+        }
+    };
 
-
-
-
-    // useEffect(() => {
-    //     if (props.text) {
-    //         console.log('text: ', props.text)
-    //         generateTextureFromText();
-    //     }
-    // }, [props.text]);
-
-    console.log('props.font: ', props.font)
+    useEffect(() => {
+        if (props.text) {
+            console.log('text: ', props.text)
+            generateTextureFromText();
+        }
+    }, [props.text]);
 
     return (
         <group>
@@ -139,9 +132,12 @@ function Shirt(props) {
                 {/* Render the T-shirt mesh */}
             </mesh>
             {props.text && (
-                <Html position={[0, 0.1, 0.1, 0.15]} className='text-wrapper'>
-                    <div style={{ fontFamily: props.font.value, fontSize: props.fontSize.value, color: snap.textColor }}>{props.text}</div>
-                </Html>
+
+                <Decal position={[0, 0.04, 0.15]} rotation={[0, 0, 0]} scale={0.15} map={texture} anisotropy={16}>
+                    <Html position={[0, 0.1, 0.1, 0.15]} className='text-wrapper'>
+                        <div style={{ fontFamily: props.font.value, fontSize: props.fontSize.value, color: snap.textColor }}>{props.text}</div>
+                    </Html>
+                </Decal>
             )}
         </group>
         // <mesh castShadow geometry={nodes.T_Shirt_male.geometry} material={materials.lambert1} material-roughness={1} {...props} dispose={null}>

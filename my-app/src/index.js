@@ -3,13 +3,15 @@ import reportWebVitals from './reportWebVitals';
 
 import { createRoot } from 'react-dom/client'
 import './styles.css'
-import { App as Canvas } from './Canvas'
-import { Overlay } from './Overlay'
+import { App as Canvas } from './views/Canvas'
+import { Overlay } from './views/Overlay'
+import Home from './views/Home'
 
 createRoot(document.getElementById('root')).render(
   <>
-    <Canvas />
-    <Overlay />
+    <Home></Home>
+    {/* <Canvas />
+    <Overlay /> */}
   </>
 )
 

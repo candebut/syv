@@ -2,7 +2,7 @@ import { Logo } from '@pmndrs/branding'
 import { motion, AnimatePresence } from 'framer-motion'
 import { AiFillCamera, AiOutlineArrowLeft, AiOutlineHighlight, AiOutlineShopping } from 'react-icons/ai'
 import { useSnapshot } from 'valtio'
-import { state } from './store'
+import { state } from '../store'
 
 export function Overlay() {
     const snap = useSnapshot(state)
