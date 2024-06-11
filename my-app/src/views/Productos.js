@@ -3,7 +3,8 @@ import { App as Canvas } from './Canvas'
 import { Overlay } from './Overlay'
 const Productos = ({ item, setItem }) => {
     const customizeItem = (item) => {
-        setItem(item)
+        console.log('item: ', item)
+        // setItem(item)
     }
     return (
         <div>
