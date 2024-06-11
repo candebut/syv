@@ -442,7 +442,6 @@ button {
 }
 
 .home-wrapper {
-  background-color: var(--main-yellow);
   height: 100vh;
 }
 
@@ -477,6 +476,8 @@ button {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  background-color: var(--main-yellow);
+  height: 100vh;
 }
 
 .semi-circle {
@@ -484,4 +485,66 @@ button {
   height: 90vh;
   background-color: var(--main-orange);
   border-radius: 0rem 0rem 18rem 18rem;
+}
+
+.historia-wrapper {
+  background-color: white;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.historia-content {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.historia-images {
+  justify-content: center;
+  align-items: center;
+}
+
+.o {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  background-color: var(--main-yellow);
+}
+
+.d {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 0rem 25rem 25rem 0rem;
+  background-color: var(--main-pink);
+}
+
+.u {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 25rem 25rem 0rem 0rem;
+  background-color: lightgrey;
+}
+
+.box {
+  width: 12rem;
+  height: 12rem;
+  background-color: var(--main-light-blue);
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.historia-text {
+  h3 {
+    text-align: center;
+  }
+  p {
+    font-weight: 300;
+    font-size: 14px;
+  }
 }
