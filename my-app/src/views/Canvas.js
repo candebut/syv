@@ -36,32 +36,30 @@ export const App = ({ position = [0, 0, 2.5], fov = 25 }) => {
 
     return (
         <div className='main-wrapper'>
-            {snap.intro ? null : (
-                <div className='text-box'>
-                    <Select
-                        value={fonts.find((option) => option.value === font)}
-                        placeholder='Seleccione un tipo de letra'
-                        options={fonts}
-                        onChange={(value) => setFont(value)}
-                        styles={customStyles}
-                        isSearchable={false}
-                    />
-                    <input type="text" value={text} onChange={handleTextChange} placeholder="Ingrese su texto" />
-                    <div className="color-options">
-                        {snap.colors.map((color) => (
-                            <div key={color} className={`circle`} style={{ background: color }} onClick={() => (state.textColor = color)}></div>
-                        ))}
-                    </div>
-                    <Select
-                        value={fontSizes.find((option) => option.value === fontSize)}
-                        placeholder='Seleccione un tamaño de letra'
-                        options={fontSizes}
-                        onChange={(value) => setFontSize(value)}
-                        styles={customStyles}
-                        isSearchable={false}
-                    />
+            <div className='text-box'>
+                <Select
+                    value={fonts.find((option) => option.value === font)}
+                    placeholder='Seleccione un tipo de letra'
+                    options={fonts}
+                    onChange={(value) => setFont(value)}
+                    styles={customStyles}
+                    isSearchable={false}
+                />
+                <input type="text" value={text} onChange={handleTextChange} placeholder="Ingrese su texto" />
+                <div className="color-options">
+                    {snap.colors.map((color) => (
+                        <div key={color} className={`circle`} style={{ background: color }} onClick={() => (state.textColor = color)}></div>
+                    ))}
                 </div>
-            )}
+                <Select
+                    value={fontSizes.find((option) => option.value === fontSize)}
+                    placeholder='Seleccione un tamaño de letra'
+                    options={fontSizes}
+                    onChange={(value) => setFontSize(value)}
+                    styles={customStyles}
+                    isSearchable={false}
+                />
+            </div>
             <Canvas shadows camera={{ position, fov }} gl={{ preserveDrawingBuffer: true }} eventSource={document.getElementById('root')} eventPrefix="client">
                 <ambientLight intensity={0.5} />
                 <Environment files="https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/potsdamer_platz_1k.hdr" />
@@ -89,9 +87,8 @@ function Backdrop() {
 
 function CameraRig({ children }) {
     const group = useRef();
-    const snap = useSnapshot(state);
     useFrame((state, delta) => {
-        easing.damp3(state.camera.position, [snap.intro ? -state.viewport.width / 4 : 0, 0, 2], 0.25, delta);
+        easing.damp3(state.camera.position, [0, 0, 2], 0.25, delta);
         easing.dampE(group.current.rotation, [state.pointer.y / 10, -state.pointer.x / 5, 0], 0.25, delta);
     });
     return <group ref={group}>{children}</group>;
@@ -128,17 +125,16 @@ function Shirt(props) {
 
     return (
         <group>
-            <mesh castShadow geometry={nodes.T_Shirt_male.geometry} material={materials.lambert1} material-roughness={1} {...props} dispose={null}>
+            <mesh castShadow geometry={nodes.T_Shirt_male.geometry} material={materials.lambert1} material-roughness={8} {...props} dispose={null}>
                 {/* Render the T-shirt mesh */}
+                {props.text && (
+                    <Decal position={[0, 0.04, 0.15]} rotation={[0, 0, 0]} scale={0.15} map={texture} anisotropy={16}>
+                        <Html position={[0, 0.1, 0.1, 0.15]} className='text-wrapper'>
+                            <div style={{ fontFamily: props.font.value, fontSize: props.fontSize.value, color: snap.textColor }}>{props.text}</div>
+                        </Html>
+                    </Decal>
+                )}
             </mesh>
-            {props.text && (
-
-                <Decal position={[0, 0.04, 0.15]} rotation={[0, 0, 0]} scale={0.15} map={texture} anisotropy={16}>
-                    <Html position={[0, 0.1, 0.1, 0.15]} className='text-wrapper'>
-                        <div style={{ fontFamily: props.font.value, fontSize: props.fontSize.value, color: snap.textColor }}>{props.text}</div>
-                    </Html>
-                </Decal>
-            )}
         </group>
         // <mesh castShadow geometry={nodes.T_Shirt_male.geometry} material={materials.lambert1} material-roughness={1} {...props} dispose={null}>
         //     {texture && <Decal position={[0, 0.04, 0.15]} rotation={[0, 0, 0]} scale={0.15} map={texture} anisotropy={16} />}

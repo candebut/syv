@@ -437,6 +437,10 @@ button {
   border-radius: 50px;
 }
 
+.inverted-tab {
+  background-color: var(--main-yellow);
+}
+
 .selected-tab {
   background-color: var(--main-pink);
 }
@@ -547,4 +551,42 @@ button {
     font-weight: 300;
     font-size: 14px;
   }
+}
+
+.productos-wrapper {
+  background-color: var(--main-yellow);
+  /* background-color: var(--main-light-blue);
+  background-color: white; */
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.productos-images {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
+
+.product-image {
+  overflow: hidden;
+  width: 18.75rem;
+  height: 25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: 500px;
+  }
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.h-100 {
+  height: 100vh;
 }

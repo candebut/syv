@@ -30,7 +30,8 @@ const tabs = [
 ]
 const Home = () => {
 
-    const [selectedTab, setSelectedTab] = useState('inicio')
+    const [selectedTab, setSelectedTab] = useState('inicio');
+    const [item, setItem] = useState(null);
 
     const selectTab = () => {
         switch (selectedTab) {
@@ -39,7 +40,7 @@ const Home = () => {
             case 'historia':
                 return <Historia />
             case 'productos':
-                return <Productos />
+                return <Productos item={item} setItem={setItem} />
             case 'presupuesto':
                 return <Presupuesto />
             case 'contacto':

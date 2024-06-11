@@ -8,15 +8,13 @@ const Historia = () => {
 
                         <motion.div className='o' initial={{
                             opacity: 0,
-                            // if odd index card,slide from right instead of left
-
                             y: -50,
                         }}
                             whileInView={{
                                 opacity: 1,
-                                y: 0, // Slide in to its original position
+                                y: 0,
                                 transition: {
-                                    duration: 1 // Animation duration
+                                    duration: 1
                                 }
                             }}
                             viewport={{ once: true }}></motion.div>
