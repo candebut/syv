@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const Inicio = () => {
     return (
         <motion.div className='home-content'>
-            <Title title='Lobis' subtitle='Buzos de egresados y más!' />
+            <Title title='LOBIS' subtitle='¡Buzos de egresados y más!' />
             <motion.div className='semi-circle' initial={{
                 opacity: 0,
                 // if odd index card,slide from right instead of left
@@ -17,7 +17,9 @@ const Inicio = () => {
                         duration: 1 // Animation duration
                     }
                 }}
-                viewport={{ once: true }}></motion.div>
+                viewport={{ once: true }}>
+                <img src='./hoodie_girl.jpeg'></img>
+            </motion.div>
         </motion.div>
     )
 }

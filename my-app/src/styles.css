@@ -491,6 +491,13 @@ button {
   height: 90vh;
   background-color: var(--main-orange);
   border-radius: 0rem 0rem 18rem 18rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: 400px;
+  }
 }
 
 .historia-wrapper {
@@ -509,6 +516,14 @@ button {
   justify-content: space-evenly;
   gap: 2rem;
   padding: 2rem;
+}
+.presupuesto-content {
+  background-color: var(--main-pink);
+  width: 92%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .historia-images {
@@ -569,10 +584,12 @@ button {
 }
 
 .presupuesto-text {
+  background-color: var(--main-yellow);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding: 2rem;
   width: 50%;
   p {
     font-weight: 300;
@@ -580,11 +597,38 @@ button {
   }
 }
 
+.presupuesto-hint {
+  position: absolute;
+  bottom: 8rem;
+  background-color: var(--main-yellow);
+  padding: 1rem 4rem;
+  width: 80%;
+  font-size: 12px;
+}
+
+.empty-third {
+  width: 33%;
+}
+
 .presupuesto-images {
   flex-direction: column;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.price-table {
+  border-collapse: collapse;
+  /* background-color: #fcbad3; */
+}
+
+.price-table td {
+  border: 2px solid black;
+  padding: 0.625rem 3.125rem;
+}
+
+.price-table tr {
+  height: 60px;
 }
 
 .productos-wrapper {
