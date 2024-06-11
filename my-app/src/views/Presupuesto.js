@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 const Presupuesto = () => {
     return (
         <div className='historia-wrapper'>
-            <div className='historia-content'>
+            <div className='presupuesto-content'>
                 <motion.div className='presupuesto-text lato' initial={{
                     opacity: 0,
                     // if odd index card,slide from right instead of left
