@@ -1,17 +1,17 @@
 import { motion } from "framer-motion";
+import Customizer from './Customizer'
 import { App as Canvas } from './Canvas'
 import { Overlay } from './Overlay'
 const Productos = ({ item, setItem }) => {
     const customizeItem = (item) => {
         console.log('item: ', item)
-        // setItem(item)
+        setItem(item)
     }
     return (
         <div>
             {item ? (
                 <div className='w-100 h-100'>
-                    <Canvas />
-                    <Overlay />
+                    <Customizer />
                 </div>
             ) :
                 (

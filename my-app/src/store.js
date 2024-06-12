@@ -7,6 +7,8 @@ const state = proxy({
     color: '#EFBD4E',
     decal: 'three2',
     textColor: '#FFFFF',
+    font: '',
+    fontSize: '12px',
 })
 
 export { state }
