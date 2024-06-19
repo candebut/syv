@@ -13,6 +13,38 @@ html {
 @import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
 
+@font-face {
+  font-family: 'Franklin Gothic Heavy Regular';
+  src: local('Franklin Gothic Heavy Regular'),
+    url('./fonts//Franklin\ Gothic\ Heavy\ Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Franklin Gothic';
+  src: local('Franklin Gothic'),
+    url('./fonts/FranklinGothic/FranklinGothicRegular/Franklin\ Gothic\ Regular.ttf')
+      format('truetype');
+}
+
+@font-face {
+  font-family: 'Franklin Gothic Condensed';
+  src: local('Franklin Gothic Condensed'),
+    url('./fonts/FranklinGothic/FranklinGothicCondensed/Franklin\ Gothic\ Condensed.otf')
+      format('opentype');
+}
+
+@font-face {
+  font-family: 'Sprite';
+  src: local('Sprite'),
+    url('./fonts/Sprite/SpriteGraffiti-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Copperlate';
+  src: local('Copperlate'),
+    url('./fonts/Copperplate-Gothic-Std-32-BC.ttf') format('truetype');
+}
+
 * {
   box-sizing: border-box;
 }
@@ -28,11 +60,11 @@ body,
 }
 
 body {
-  background: #ffea6f;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Franklin Gothic';
+
   --main-yellow: #ffea6f;
-  --main-pink: #ffa7df;
-  --main-light-blue: #c2dcfd;
+  --main-red: #e9463a;
+  --main-blue: #444f9d;
   --main-orange: #fdc76a;
 }
 
@@ -88,14 +120,17 @@ canvas {
   touch-action: none;
   animation: fade-in 1s ease 0.3s forwards;
 }
-
+.header-container {
+  position: absolute;
+  z-index: 1000;
+}
 header {
   display: flex;
   justify-content: space-between;
   width: 100%;
   padding: 40px;
   align-items: center;
-  position: fixed;
+  z-index: 1000;
 }
 
 header p {
@@ -426,25 +461,26 @@ button {
   gap: 0.75rem;
   padding: 1rem;
   cursor: pointer;
-  position: absolute;
+  z-index: 1000;
 }
 
 .tab {
-  background-color: var(--main-light-blue);
+  background-color: var(--main-blue);
   padding: 20px 30px;
   border-radius: 50px;
+  color: white;
 }
 
 .inverted-tab {
-  background-color: var(--main-yellow);
+  background-color: var(--main-red);
 }
 
 .selected-tab {
-  background-color: var(--main-pink);
+  background-color: var(--main-red);
 }
 
 .selected-tab-blue {
-  background-color: var(--main-light-blue);
+  background-color: var(--main-blue);
 }
 
 .home-wrapper {
@@ -479,10 +515,11 @@ button {
 }
 
 .home-content {
+  background-image: url('../public/mosaic.jpg');
+  background-size: 200px;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-color: var(--main-yellow);
   height: 100vh;
 }
 
@@ -498,6 +535,42 @@ button {
   img {
     width: 400px;
   }
+}
+
+.photo-box {
+  position: relative;
+}
+
+.photo-portrait {
+  width: 20rem;
+  height: 25rem;
+  background-color: white;
+  background-image: url('../public/foto_chicos.jpeg');
+  background-size: cover;
+  border: 6px solid white;
+  transform: rotate(2deg);
+}
+.photo-portrait-text {
+  font-family: 'Sprite';
+  position: absolute;
+  bottom: -8rem;
+  text-shadow: 2px 1px 0px white;
+  font-size: 67px;
+  transform: rotate(-5deg);
+  h3 {
+    margin: 0;
+  }
+}
+.business {
+  font-family: 'Copperlate';
+  transform: rotate(0) !important;
+}
+
+.photo-2 {
+  background-image: url('../public/foto_chicos2.jpeg') !important;
+  background-position-x: center;
+  transform: rotate(-2deg) !important;
+  position: relative;
 }
 
 .historia-wrapper {
@@ -518,7 +591,7 @@ button {
   padding: 2rem;
 }
 .presupuesto-content {
-  background-color: var(--main-pink);
+  background-color: var(--main-red);
   width: 92%;
   text-align: center;
   display: flex;
@@ -542,7 +615,7 @@ button {
   width: 12rem;
   height: 12rem;
   border-radius: 0rem 25rem 25rem 0rem;
-  background-color: var(--main-pink);
+  background-color: var(--main-red);
 }
 
 .u {
@@ -555,7 +628,7 @@ button {
 .box {
   width: 12rem;
   height: 12rem;
-  background-color: var(--main-light-blue);
+  background-color: var(--main-blue);
 }
 
 .row {
@@ -633,7 +706,7 @@ button {
 
 .productos-wrapper {
   background-color: var(--main-yellow);
-  /* background-color: var(--main-light-blue);
+  /* background-color: var(--main-blue);
   background-color: white; */
   height: 100vh;
   display: flex;
@@ -669,7 +742,7 @@ button {
   height: 100vh;
 }
 .contacto-wrapper {
-  background-color: var(--main-light-blue);
+  background-color: var(--main-blue);
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -679,7 +752,7 @@ button {
 }
 
 .contacto-content {
-  background-color: var(--main-pink);
+  background-color: var(--main-red);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1022,4 +1095,23 @@ button.download-btn {
   width: 100%;
   height: auto;
   border-radius: 50%;
+}
+
+.w-100 {
+  width: 100%;
+}
+.d-flex {
+  display: flex;
+}
+.justify-center {
+  justify-content: center;
+}
+.align-center {
+  align-items: center;
+}
+
+.photos-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 13rem;
 }
