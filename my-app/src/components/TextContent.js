@@ -45,8 +45,8 @@ const TextContent = ({ text, setText }) => {
 
                 <input onChange={(e) => setText(e.target.value)} value={text} placeholder='Ingrese su texto' />
                 <div className="color-options">
-                    {snap.colors.map((color) => (
-                        <div key={color} className={`circle`} style={{ background: color }} onClick={() => (state.color = color)}></div>
+                    {state.newColors.map((color) => (
+                        <div key={color.label} className={`circle`} style={{ background: '#' + color.value }} onClick={() => (state.color = color.label)}></div>
                     ))}
                 </div>
             </div>

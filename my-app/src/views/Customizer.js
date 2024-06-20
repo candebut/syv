@@ -14,9 +14,14 @@ function Customizer({ customizeItem, item }) {
     const [userChoiceToCustomize, setUserChoiceToCustomize] = useState("T-Shirt");
     const [droppedImage, setDroppedImage] = useState(null);
     const [text, setText] = useState('')
+    const [image, setImage] = useState('Remera_blanco.png');
     const snap = useSnapshot(state);
 
-    console.log('userChoiceToCustomize: ', userChoiceToCustomize)
+
+    useEffect(() => {
+        getUserChoice();
+        console.log('snap: ', snap)
+    }, [snap])
 
     // handle user choice
     const handleUserChoice = () => {
@@ -43,6 +48,26 @@ function Customizer({ customizeItem, item }) {
             });
         }
     };
+
+    const getUserChoice = () => {
+        //agregar variable: __{color}
+        switch (item) {
+            case 'Buzo':
+                setImage(`Buzo_${snap.color}.png`)
+                break
+            case 'Buzo_redondo':
+                setImage(`Buzo_redondo_${snap.color}.png`)
+                break
+            case 'Campera':
+                setImage(`Campera_${snap.color}.png`)
+                break
+            case 'Remera':
+                setImage(`Remera_${snap.color}.png`)
+                break
+            default: setImage('Remera_blanco.png')
+                break
+        }
+    }
 
     // download image
     const downloadableAreaRef = useRef(null);
@@ -98,6 +123,7 @@ function Customizer({ customizeItem, item }) {
                             setDroppedImage={setDroppedImage}
                             text={text}
                             item={item}
+                            image={image}
                         />
                     </div>
                 </div>

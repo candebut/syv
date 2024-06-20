@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
 import Customizer from './Customizer'
-import { App as Canvas } from './Canvas'
-import { Overlay } from './Overlay'
 const Productos = ({ item, setItem }) => {
     const customizeItem = (item) => {
         console.log('item: ', item)
@@ -34,10 +32,10 @@ const Productos = ({ item, setItem }) => {
                                         duration: .5
                                     }
                                 }}
-                                viewport={{ once: true }} className='product-image' onClick={() => customizeItem('hoodie')}>
-                                <img src="./hoodie_shadow.png" alt="shirt" />
+                                viewport={{ once: true }} className='product-image' onClick={() => customizeItem('Buzo')}>
+                                <img src="./Buzo_petroleo.png" alt="shirt" />
                             </motion.div>
-                            <motion.div onClick={() => customizeItem('shirt')} whileHover={{ scale: 1.2 }} initial={{
+                            <motion.div onClick={() => customizeItem('Remera')} whileHover={{ scale: 1.2 }} initial={{
                                 opacity: 0,
                                 y: -100,
                             }}
@@ -49,9 +47,9 @@ const Productos = ({ item, setItem }) => {
                                     }
                                 }}
                                 viewport={{ once: true }} className='product-image'>
-                                <img src="./shirt_shadow.png" alt="shirt" />
+                                <img src="./Remera_militar.png" alt="shirt" />
                             </motion.div>
-                            <motion.div onClick={() => customizeItem('campera')} whileHover={{ scale: 1.2 }} initial={{
+                            <motion.div onClick={() => customizeItem('Campera')} whileHover={{ scale: 1.2 }} initial={{
                                 opacity: 0,
                                 y: -100,
                             }}
@@ -63,7 +61,7 @@ const Productos = ({ item, setItem }) => {
                                     }
                                 }}
                                 viewport={{ once: true }} className='product-image'>
-                                <img src="./campera_shadow.png" alt="shirt" />
+                                <img src="./Campera_negro.png" alt="shirt" />
                             </motion.div>
                         </div>
                     </div>
