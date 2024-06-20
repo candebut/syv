@@ -9,6 +9,7 @@ const TextContent = ({ text, setText }) => {
         control: (provided) => ({
             ...provided,
             display: 'flex',
+            fontSize: '12px'
 
         }),
         menu: (provided) => ({
@@ -22,7 +23,7 @@ const TextContent = ({ text, setText }) => {
             <div className='text-box'>
                 <Select
                     value={fonts.find((option) => option.value === state.font)}
-                    placeholder='Seleccione un tipo de letra'
+                    placeholder='Seleccione tipo y color de letra'
                     options={fonts}
                     onChange={(value) => state.font = value}
                     styles={customStyles}
@@ -42,7 +43,7 @@ const TextContent = ({ text, setText }) => {
                     isSearchable={false}
                 />
 
-                <input onChange={(e) => setText(e.target.value)} value={text} />
+                <input onChange={(e) => setText(e.target.value)} value={text} placeholder='Ingrese su texto' />
                 <div className="color-options">
                     {snap.colors.map((color) => (
                         <div key={color} className={`circle`} style={{ background: color }} onClick={() => (state.color = color)}></div>
