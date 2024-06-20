@@ -1,7 +1,13 @@
 import { motion } from "framer-motion";
 const Presupuesto = () => {
     return (
-        <div className='presupuesto-wrapper'>
+        <motion.div className='presupuesto-wrapper' initial={{
+            opacity: 0,
+        }}
+            whileInView={{
+                opacity: 1,
+            }}
+            viewport={{ once: true }}>
             <div className='presupuesto'>
                 <h1>Presupuesto</h1>
                 <div className='productos-text'>
@@ -58,7 +64,7 @@ const Presupuesto = () => {
             </div>
 
 
-        </div>
+        </motion.div>
 
     )
 }

@@ -2,10 +2,28 @@ import { motion } from "framer-motion";
 import Footer from '../components/Footer'
 const Historia = () => {
     return (
-        <div className='historia-wrapper'>
+        <motion.div className='historia-wrapper' initial={{
+            opacity: 0,
+        }}
+            whileInView={{
+                opacity: 1,
+            }}
+            viewport={{ once: true }} >
             <div className='d-flex row historia-content'>
                 <div className='historia-photo photo-left'>
-                    <div className='historia-photo-content-left'></div>
+                    <motion.div initial={{
+                        opacity: 0,
+                        y: 100,
+                    }}
+                        whileInView={{
+                            opacity: 1,
+                            y: 0,
+                            rotate: -8,
+                            transition: {
+                                duration: .5
+                            }
+                        }}
+                        viewport={{ once: true }} className='historia-photo-content-left'></motion.div>
                 </div>
                 <div className='historia-main-content column'>
                     <div className='about-us column'>
@@ -24,10 +42,22 @@ const Historia = () => {
                     </div>
                 </div>
                 <div className='historia-photo photo-right'>
-                    <div className='historia-photo-content-right'></div>
+                    <motion.div initial={{
+                        opacity: 0,
+                        y: -100,
+                    }}
+                        whileInView={{
+                            opacity: 1,
+                            y: 0,
+                            rotate: 8,
+                            transition: {
+                                duration: .5
+                            }
+                        }}
+                        viewport={{ once: true }} className='historia-photo-content-right'></motion.div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 
