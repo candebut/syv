@@ -69,12 +69,12 @@ export const fontSizes = [
             <p className='font-24px'>XL - Extra large</p>
         ),
     },
-    {
-        value: '28px',
-        label: (
-            <p className='font-28px'>XXL - Extra extra large</p>
-        ),
-    },
+    // {
+    //     value: '28px',
+    //     label: (
+    //         <p className='font-28px'>XXL - Extra extra large</p>
+    //     ),
+    // },
 
 
 ];

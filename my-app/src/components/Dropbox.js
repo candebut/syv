@@ -36,7 +36,7 @@ const Dropbox = ({ userChoiceToCustomize, droppedImage, setDroppedImage, text, i
                         alt={droppedImage.alt_description}
                     />
                 )}
-                <p className={`bordado font-${snap.font.value} font-${snap.fontSize.value} font-${state.textColor}`}>{text}</p>
+                <p className={`bordado font-${snap.font.value} font-${snap.fontSize.value} font-${snap.textColor}`}>{text}</p>
             </div>
         </div>
     );

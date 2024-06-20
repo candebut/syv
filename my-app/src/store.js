@@ -38,18 +38,18 @@ const state = proxy({
             label: 'rojo',
             value: 'af0826'
         },
-        {
-            label: 'gris',
-            value: 'b5b5ad'
-        },
+        // {
+        //     label: 'gris',
+        //     value: 'b5b5ad'
+        // },
         {
             label: 'militar',
             value: '84876c'
         },
-        {
-            label: 'topo',
-            value: '373633'
-        },
+        // {
+        //     label: 'topo',
+        //     value: '373633'
+        // },
         {
             label: 'nude',
             value: 'b9adaa'

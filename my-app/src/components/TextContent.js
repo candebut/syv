@@ -30,7 +30,7 @@ const TextContent = ({ text, setText }) => {
                     isSearchable={false}
                 />
                 <div className="color-options">
-                    {snap.colors.map((color) => (
+                    {state.colors.map((color) => (
                         <div key={color} className={`circle`} style={{ background: '#' + color }} onClick={() => (state.textColor = color)}></div>
                     ))}
                 </div>
