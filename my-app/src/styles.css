@@ -100,12 +100,8 @@ footer {
 
 .text-box {
   z-index: 100000;
-  position: absolute;
-  left: 3rem;
-  top: 3rem;
   display: flex;
   flex-direction: column;
-
   justify-content: center;
   gap: 1rem;
 
@@ -220,7 +216,7 @@ section {
 }
 
 button {
-  background-color: #dd5c18;
+  background-color: var(--main-red);
   border: none;
   border-radius: 4px;
   color: white;
@@ -238,7 +234,7 @@ button {
 }
 
 button:hover {
-  box-shadow: inset 250px 0 0 0 black;
+  box-shadow: inset 250px 0 0 0 var(--main-blue);
   transform: scale(1.1);
 }
 
@@ -853,7 +849,7 @@ h1 {
 }
 
 .container .leftside {
-  background-color: #252627;
+  background-color: var(--main-blue);
   display: flex;
 }
 
@@ -1090,13 +1086,13 @@ button.h6 {
 }
 
 button.switch-btn {
-  background-color: #8b3dff;
+  background-color: var(--main-red);
   color: #fff;
 }
 
 button.download-btn {
-  border: 2px solid #8b3dff;
-  color: #8b3dff;
+  border: 2px solid var(--main-red);
+  color: var(--main-red);
   background-color: #fff;
 }
 

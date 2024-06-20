@@ -84,21 +84,22 @@ function Customizer() {
                 </div>
                 <div className="rightside">
                     <div className="btns-flex">
-                        <button
+                        {/* <button
                             type="button"
                             className="switch-btn"
                             onClick={handleUserChoice}
                         >
                             Switch With{" "}
                             {userChoiceToCustomize === "T-Shirt" ? "Mug" : "T-Shirt"}
-                        </button>
+                        </button> */}
                         <button
                             type="button"
-                            className="download-btn"
+
                             onClick={downloadImage}
                         >
-                            Download
+                            Descargar muestra
                         </button>
+                        <button className='close'>X</button>
                     </div>
                     <div className="downloadable-area" ref={downloadableAreaRef}>
                         <Dropbox
