@@ -14,7 +14,7 @@ function Customizer({ customizeItem, item }) {
     const [userChoiceToCustomize, setUserChoiceToCustomize] = useState("T-Shirt");
     const [droppedImage, setDroppedImage] = useState(null);
     const [text, setText] = useState('')
-    const [image, setImage] = useState('Remera_blanco.png');
+    const [image, setImage] = useState('Campera_negro.png');
     const snap = useSnapshot(state);
 
 

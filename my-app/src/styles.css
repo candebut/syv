@@ -458,18 +458,21 @@ button {
   font-size: 12px;
 }
 
+.font-14px {
+  font-size: 14px;
+}
+
 .font-16px {
   font-size: 16px;
 }
-
 .font-20px {
   font-size: 20px;
 }
 .font-24px {
   font-size: 24px;
 }
-.font-32px {
-  font-size: 32px;
+.font-28px {
+  font-size: 28px;
 }
 .font-40px {
   font-size: 40px;
@@ -1081,8 +1084,6 @@ button.h6 {
 
 .rightside .btns-flex {
   width: 100%;
-  display: flex;
-  justify-content: flex-end;
 }
 
 .rightside button {
@@ -1135,7 +1136,7 @@ button.download-btn {
 
 .drop-div {
   position: absolute;
-  width: 25%;
+  width: 30%;
   height: 25%;
   border-radius: 50%;
   display: flex;
@@ -1146,7 +1147,7 @@ button.download-btn {
 
 .drop-div.tshirt {
   top: 24%;
-  left: 37.5%;
+  left: 131px;
 }
 
 .drop-div.mug {
