@@ -19,15 +19,25 @@ const Dropbox = ({ userChoiceToCustomize, droppedImage, setDroppedImage, text })
         setDroppedImage(item);
     };
 
+    const getUserChoice = () => {
+        //agregar variable: __{color}
+        switch (userChoiceToCustomize) {
+            case 'T-Shirt':
+                return 'tshirt'
+            default: return 'hoodie'
+        }
+    }
+
+    console.log('state.textColor: ', state.textColor)
+
     return (
         <div className="main-img-div" ref={drop}>
             <img
-                src={userChoiceToCustomize === "T-Shirt" ? './shirt_shadow.png' : 'hoodie_shadow.png'}
+                src={userChoiceToCustomize === "T-Shirt" ? "tshirt" : "hoodie"}
                 alt={userChoiceToCustomize === "T-Shirt" ? "tshirt" : "hoodie"}
             />
             <div
-                className={`drop-div ${userChoiceToCustomize === "T-Shirt" ? "tshirt" : "mug"
-                    }`}
+                className='drop-div tshirt'
                 style={{ border: isOver ? "3px solid #6db5e7" : "0px" }}
             >
                 {droppedImage && (
@@ -36,7 +46,7 @@ const Dropbox = ({ userChoiceToCustomize, droppedImage, setDroppedImage, text })
                         alt={droppedImage.alt_description}
                     />
                 )}
-                <p className={`font--${snap.font} fontSize--${snap.fontSize} background--${snap.color} text--${snap.textColor}`}>{text}</p>
+                <p className={`font-${snap.font.value} font-${snap.fontSize.value} font-${state.textColor}`}>{text}</p>
             </div>
         </div>
     );

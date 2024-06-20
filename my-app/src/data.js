@@ -1,12 +1,12 @@
 export const fonts = [
     {
-        value: 'Inter',
+        value: 'inter',
         label: (
             <p className='font-inter'>Inter</p>
         ),
     },
     {
-        value: "Arial",
+        value: "arial",
         label: (
             <p className='font-arial'>Arial</p>
         ),
@@ -18,7 +18,7 @@ export const fonts = [
         ),
     },
     {
-        value: 'Times New Roman',
+        value: 'times',
         label: (
             <p className='font-times'>Times new roman</p>
         ),

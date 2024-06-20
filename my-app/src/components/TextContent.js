@@ -16,7 +16,6 @@ const TextContent = ({ text, setText }) => {
             zIndex: 10000
         }),
     };
-
     return (
         <div className="customizer">
             <div className='text-box'>
@@ -30,7 +29,7 @@ const TextContent = ({ text, setText }) => {
                 />
                 <div className="color-options">
                     {snap.colors.map((color) => (
-                        <div key={color} className={`circle`} style={{ background: color }} onClick={() => (state.textColor = color)}></div>
+                        <div key={color} className={`circle`} style={{ background: '#' + color }} onClick={() => (state.textColor = color)}></div>
                     ))}
                 </div>
                 <Select

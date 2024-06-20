@@ -12,7 +12,6 @@ import { fonts, fontSizes } from '../data'
 function Customizer() {
     // states
     const [userChoiceToCustomize, setUserChoiceToCustomize] = useState("T-Shirt");
-    const [tab, setTab] = useState("text");
     const [droppedImage, setDroppedImage] = useState(null);
     const [text, setText] = useState('')
     const snap = useSnapshot(state);
@@ -73,25 +72,14 @@ function Customizer() {
 
     return (
         <>
-            <h1>ReactJS T-Shirt And Mug Customizer App</h1>
             <div className="container">
                 <div className="leftside">
-                    {/* <Sidebar tab={tab} handleTabChange={handleTabChange} /> */}
                     <div className="content">
-                        {/* text */}
-                        {tab === "text" && <TextContent text={text} setText={setText} />}
+                        <TextContent text={text} setText={setText} />
                     </div>
                 </div>
                 <div className="rightside">
                     <div className="btns-flex">
-                        {/* <button
-                            type="button"
-                            className="switch-btn"
-                            onClick={handleUserChoice}
-                        >
-                            Switch With{" "}
-                            {userChoiceToCustomize === "T-Shirt" ? "Mug" : "T-Shirt"}
-                        </button> */}
                         <button
                             type="button"
 
