@@ -16,6 +16,8 @@ function Customizer() {
     const [text, setText] = useState('')
     const snap = useSnapshot(state);
 
+    console.log('userChoiceToCustomize: ', userChoiceToCustomize)
+
     // handle user choice
     const handleUserChoice = () => {
         if (!droppedImage) {

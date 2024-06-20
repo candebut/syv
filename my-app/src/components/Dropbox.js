@@ -28,12 +28,10 @@ const Dropbox = ({ userChoiceToCustomize, droppedImage, setDroppedImage, text })
         }
     }
 
-    console.log('state.textColor: ', state.textColor)
-
     return (
         <div className="main-img-div" ref={drop}>
             <img
-                src={userChoiceToCustomize === "T-Shirt" ? "tshirt" : "hoodie"}
+                src={userChoiceToCustomize === "T-Shirt" ? "shirt_shadow.png" : "hoodie_shadow.png"}
                 alt={userChoiceToCustomize === "T-Shirt" ? "tshirt" : "hoodie"}
             />
             <div
@@ -46,7 +44,7 @@ const Dropbox = ({ userChoiceToCustomize, droppedImage, setDroppedImage, text })
                         alt={droppedImage.alt_description}
                     />
                 )}
-                <p className={`font-${snap.font.value} font-${snap.fontSize.value} font-${state.textColor}`}>{text}</p>
+                <p className={`bordado font-${snap.font.value} font-${snap.fontSize.value} font-${state.textColor}`}>{text}</p>
             </div>
         </div>
     );
