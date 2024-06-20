@@ -1,9 +1,8 @@
 import { useDrop } from "react-dnd";
 import { useSnapshot } from 'valtio'
 import { state } from '../store'
-import { useState, useEffect } from 'react';
 
-const Dropbox = ({ userChoiceToCustomize, droppedImage, setDroppedImage, text, item, image }) => {
+const Dropbox = ({ droppedImage, setDroppedImage, text, item, image }) => {
     const snap = useSnapshot(state)
     const [{ isOver }, drop] = useDrop(
         () => ({

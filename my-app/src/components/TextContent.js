@@ -1,10 +1,8 @@
-import { useSnapshot } from 'valtio'
 import { state } from '../store'
 import { fonts, fontSizes } from '../data'
 import Select from 'react-select'
 
 const TextContent = ({ text, setText }) => {
-    const snap = useSnapshot(state)
     const customStyles = {
         control: (provided) => ({
             ...provided,

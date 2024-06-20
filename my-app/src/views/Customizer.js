@@ -1,17 +1,13 @@
 import { useEffect, useRef, useState } from "react";
-import Swal from "sweetalert2";
 import "sweetalert2/dist/sweetalert2.min.css";
 import html2canvas from "html2canvas";
 import TextContent from "../components/TextContent";
 import Dropbox from "../components/Dropbox";
 import { useSnapshot } from 'valtio'
 import { state } from '../store'
-import { fonts, fontSizes } from '../data'
-
 
 function Customizer({ customizeItem, item }) {
     // states
-    const [userChoiceToCustomize, setUserChoiceToCustomize] = useState("T-Shirt");
     const [droppedImage, setDroppedImage] = useState(null);
     const [text, setText] = useState('')
     const [image, setImage] = useState('Campera_negro.png');
@@ -21,36 +17,10 @@ function Customizer({ customizeItem, item }) {
     useEffect(() => {
         getUserChoice();
         console.log('snap: ', snap)
+        // eslint-disable-next-line 
     }, [snap])
 
-    // handle user choice
-    const handleUserChoice = () => {
-        if (!droppedImage) {
-            setUserChoiceToCustomize(
-                userChoiceToCustomize === "T-Shirt" ? "Mug" : "T-Shirt"
-            );
-        } else {
-            Swal.fire({
-                title: "Do you wish to continue?",
-                text: `Switching to ${userChoiceToCustomize === "T-Shirt" ? "Mug" : "T-Shirt"
-                    } will cause you to lose all your current progress.`,
-                icon: "warning",
-                showCancelButton: true,
-                confirmButtonText: "OK",
-                cancelButtonText: "Cancel",
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    setUserChoiceToCustomize(
-                        userChoiceToCustomize === "T-Shirt" ? "Mug" : "T-Shirt"
-                    );
-                    setDroppedImage(null);
-                }
-            });
-        }
-    };
-
     const getUserChoice = () => {
-        //agregar variable: __{color}
         switch (item) {
             case 'Buzo':
                 setImage(`Buzo_${snap.color}.png`)
@@ -75,10 +45,8 @@ function Customizer({ customizeItem, item }) {
         const element = downloadableAreaRef.current;
         // Create a canvas with the desired dimensions
         const canvas = document.createElement("canvas");
-        canvas.width = userChoiceToCustomize === "T-Shirt" ? 1280 : 820;
-        canvas.height = userChoiceToCustomize === "T-Shirt" ? 1024 : 512;
-
-        // Get the 2D context of the canvas
+        canvas.width = 2480;
+        canvas.height = 2600;
         const ctx = canvas.getContext("2d");
 
         // Capture the content onto the canvas
@@ -90,7 +58,7 @@ function Customizer({ customizeItem, item }) {
                 // Convert the canvas to a data URL and create a download link
                 const imgData = canvas.toDataURL("image/png");
                 const link = document.createElement("a");
-                link.download = `${userChoiceToCustomize}.png`;
+                link.download = `${item}.png`;
                 link.href = imgData;
                 link.click();
             }
@@ -118,7 +86,6 @@ function Customizer({ customizeItem, item }) {
                     </div>
                     <div className="downloadable-area" ref={downloadableAreaRef}>
                         <Dropbox
-                            userChoiceToCustomize={userChoiceToCustomize}
                             droppedImage={droppedImage}
                             setDroppedImage={setDroppedImage}
                             text={text}
