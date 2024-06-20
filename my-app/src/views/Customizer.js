@@ -9,7 +9,7 @@ import { state } from '../store'
 import { fonts, fontSizes } from '../data'
 
 
-function Customizer() {
+function Customizer({ customizeItem, item }) {
     // states
     const [userChoiceToCustomize, setUserChoiceToCustomize] = useState("T-Shirt");
     const [droppedImage, setDroppedImage] = useState(null);
@@ -89,7 +89,7 @@ function Customizer() {
                         >
                             Descargar muestra
                         </button>
-                        <button className='close'>X</button>
+                        <button className='close' onClick={() => customizeItem(null)}>X</button>
                     </div>
                     <div className="downloadable-area" ref={downloadableAreaRef}>
                         <Dropbox
@@ -97,6 +97,7 @@ function Customizer() {
                             droppedImage={droppedImage}
                             setDroppedImage={setDroppedImage}
                             text={text}
+                            item={item}
                         />
                     </div>
                 </div>

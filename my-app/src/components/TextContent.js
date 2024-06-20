@@ -9,11 +9,12 @@ const TextContent = ({ text, setText }) => {
         control: (provided) => ({
             ...provided,
             display: 'flex',
-            zIndex: 10000
+
         }),
         menu: (provided) => ({
             ...provided,
-            zIndex: 10000
+            zIndex: 10000,
+            color: 'black',
         }),
     };
     return (

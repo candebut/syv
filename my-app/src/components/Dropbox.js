@@ -2,7 +2,7 @@ import { useDrop } from "react-dnd";
 import { useSnapshot } from 'valtio'
 import { state } from '../store'
 
-const Dropbox = ({ userChoiceToCustomize, droppedImage, setDroppedImage, text }) => {
+const Dropbox = ({ userChoiceToCustomize, droppedImage, setDroppedImage, text, item }) => {
     const snap = useSnapshot(state)
     const [{ isOver }, drop] = useDrop(
         () => ({
@@ -21,18 +21,22 @@ const Dropbox = ({ userChoiceToCustomize, droppedImage, setDroppedImage, text })
 
     const getUserChoice = () => {
         //agregar variable: __{color}
-        switch (userChoiceToCustomize) {
-            case 'T-Shirt':
-                return 'tshirt'
-            default: return 'hoodie'
+        switch (item) {
+            case 'shirt':
+                return 'shirt_shadow.png'
+            case 'hoodie':
+                return 'hoodie_shadow.png'
+            case 'campera':
+                return 'campera_shadow.png'
+            default: return 'hoodie_shadow.png'
         }
     }
 
     return (
         <div className="main-img-div" ref={drop}>
             <img
-                src={userChoiceToCustomize === "T-Shirt" ? "shirt_shadow.png" : "hoodie_shadow.png"}
-                alt={userChoiceToCustomize === "T-Shirt" ? "tshirt" : "hoodie"}
+                src={getUserChoice()}
+                alt={getUserChoice()}
             />
             <div
                 className='drop-div tshirt'
