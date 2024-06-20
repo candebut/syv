@@ -602,21 +602,44 @@ button {
   justify-content: center;
 }
 
+.presupuesto {
+  margin-top: 230px;
+  margin-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 75%;
+  p {
+    font-size: 15px;
+  }
+}
+
+.presupuesto-wrapper {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: scroll;
+}
+
+.presupuesto-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    margin-top: 0;
+  }
+}
+
 .presupuesto-content {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-  gap: 2rem;
-  padding: 2rem;
-}
-.presupuesto-content {
-  background-color: var(--main-red);
-  width: 92%;
+  flex-direction: column;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .o {
@@ -652,6 +675,9 @@ button {
 }
 
 .contacto-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
   h3 {
     text-align: center;
   }
@@ -662,17 +688,12 @@ button {
 }
 
 .presupuesto-text {
-  background-color: var(--main-yellow);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 2rem;
-  width: 50%;
-  p {
-    font-weight: 300;
-    font-size: 14px;
-  }
+  position: absolute;
+  font-family: 'Handfine';
+  font-weight: 300;
+  font-size: 26px !important;
+  right: -120px;
+  transform: rotate(-8deg);
 }
 
 .presupuesto-hint {
@@ -680,7 +701,7 @@ button {
   bottom: 8rem;
   background-color: var(--main-yellow);
   padding: 1rem 4rem;
-  width: 80%;
+  width: 30%;
   font-size: 12px;
 }
 
@@ -770,20 +791,20 @@ button {
   height: 100vh;
 }
 .contacto-wrapper {
-  background-color: var(--main-blue);
   display: flex;
   flex-direction: column;
   height: 100vh;
   justify-content: center;
   align-items: center;
-  padding: 10rem;
+  padding: 0px 10rem;
+  p {
+    text-align: center;
+  }
 }
 
 .contacto-content {
-  background-color: var(--main-red);
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   padding: 10rem;
 }
