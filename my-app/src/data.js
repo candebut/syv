@@ -23,6 +23,12 @@ export const fonts = [
             <p className='font-times'>Times new roman</p>
         ),
     },
+    {
+        value: 'sprite',
+        label: (
+            <p className='font-sprite'>Sprite Graffiti</p>
+        ),
+    },
 
 ];
 
@@ -30,44 +36,39 @@ export const fontSizes = [
     {
         value: '10px',
         label: (
-            <p className='font-10px'>XXS</p>
+            <p className='font-10px'>XXS - Extra extra small</p>
         ),
     },
     {
         value: "12px",
         label: (
-            <p className='font-12px'>XS</p>
+            <p className='font-12px'>XS - Extra small</p>
         ),
     },
     {
         value: "16px",
         label: (
-            <p className='font-16px'>S</p>
+            <p className='font-16px'>S - Small</p>
         ),
     },
     {
         value: '20px',
         label: (
-            <p className='font-20px'>M</p>
+            <p className='font-20px'>M - Medium</p>
         ),
     },
     {
         value: '24px',
         label: (
-            <p className='font-24px'>L</p>
+            <p className='font-24px'>L - Large</p>
         ),
     },
     {
         value: '32px',
         label: (
-            <p className='font-32px'>XL</p>
+            <p className='font-32px'>XL - Extra large</p>
         ),
     },
-    {
-        value: '40px',
-        label: (
-            <p className='font-40px'>XXL</p>
-        ),
-    },
+
 
 ];
