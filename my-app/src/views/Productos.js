@@ -8,7 +8,7 @@ const Productos = ({ item, setItem }) => {
         setItem(item)
     }
     return (
-        <div>
+        <motion.div className='home-content'>
             {item ? (
                 <div className='w-100 h-100'>
                     <Customizer />
@@ -16,7 +16,12 @@ const Productos = ({ item, setItem }) => {
             ) :
                 (
                     <div className='productos-wrapper patua'>
-                        <h1>Personaliza tus favoritos!</h1>
+                        <div className='productos-text'>
+                            <h1>Personaliza</h1>
+                            <h2>TUS PRENDAS</h2>
+                            <h3>favoritas!</h3>
+                        </div>
+
                         <div className='productos-images'>
                             <motion.div whileHover={{ scale: 1.2 }} initial={{
                                 opacity: 0,
@@ -64,7 +69,7 @@ const Productos = ({ item, setItem }) => {
                     </div>
                 )
             }
-        </div>
+        </motion.div>
     )
 }
 export default Productos;

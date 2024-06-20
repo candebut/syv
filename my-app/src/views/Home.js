@@ -5,6 +5,7 @@ import Historia from './Historia'
 import Presupuesto from './Presupuesto'
 import Contacto from './Contacto'
 import Productos from './Productos'
+import Footer from '../components/Footer'
 
 const tabs = [
     {
@@ -54,6 +55,7 @@ const Home = () => {
         <div className='home-wrapper'>
             <Header selectedTab={selectedTab} setSelectedTab={setSelectedTab} tabs={tabs}></Header>
             {selectTab()}
+            <Footer />
         </div>
     )
 }

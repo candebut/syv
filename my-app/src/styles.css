@@ -45,6 +45,16 @@ html {
     url('./fonts/Copperplate-Gothic-Std-32-BC.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Chinook';
+  src: local('Chinook'), url('./fonts/Chinook-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Handfine';
+  src: local('Handfine'), url('./fonts/Handfine.otf') format('opentype');
+}
+
 * {
   box-sizing: border-box;
 }
@@ -61,11 +71,22 @@ body,
 
 body {
   font-family: 'Franklin Gothic';
-
+  background-image: url('../public/mosaic.jpg');
+  background-size: 200px;
   --main-yellow: #ffea6f;
   --main-red: #e9463a;
   --main-blue: #444f9d;
   --main-orange: #fdc76a;
+}
+
+footer {
+  font-family: 'Chinook';
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  left: calc(50% - 100px);
+  top: 93vh;
 }
 
 @keyframes fade-in {
@@ -520,7 +541,7 @@ button {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  height: 100vh;
+  height: 90vh;
 }
 
 .semi-circle {
@@ -548,7 +569,7 @@ button {
   background-image: url('../public/foto_chicos.jpeg');
   background-size: cover;
   border: 6px solid white;
-  transform: rotate(2deg);
+  transform: rotate(2deg) !important;
 }
 .photo-portrait-text {
   font-family: 'Sprite';
@@ -581,7 +602,6 @@ button {
   justify-content: center;
 }
 
-.historia-content,
 .presupuesto-content {
   display: flex;
   flex-direction: row;
@@ -595,11 +615,6 @@ button {
   width: 92%;
   text-align: center;
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.historia-images {
   justify-content: center;
   align-items: center;
 }
@@ -634,16 +649,6 @@ button {
 .row {
   display: flex;
   flex-direction: row;
-}
-
-.historia-text {
-  h3 {
-    text-align: center;
-  }
-  p {
-    font-weight: 300;
-    font-size: 14px;
-  }
 }
 
 .contacto-text {
@@ -705,9 +710,6 @@ button {
 }
 
 .productos-wrapper {
-  background-color: var(--main-yellow);
-  /* background-color: var(--main-blue);
-  background-color: white; */
   height: 100vh;
   display: flex;
   align-items: center;
@@ -720,6 +722,32 @@ button {
   flex-direction: row;
   align-items: center;
   cursor: pointer;
+}
+
+.productos-text {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  h1 {
+    font-family: 'Franklin Gothic Condensed';
+    font-size: 2.5rem;
+    margin: 0;
+  }
+  h2 {
+    font-family: 'Copperlate';
+    font-size: 1.875rem;
+    margin: 0;
+  }
+  h3 {
+    font-family: 'Handfine';
+    margin: 0;
+    font-size: 1.625rem;
+    position: absolute;
+    bottom: 0;
+    right: -85px;
+    transform: rotate(-8deg);
+  }
 }
 
 .product-image {
@@ -765,10 +793,6 @@ button {
     flex-wrap: wrap;
   }
 
-  .historia-content {
-    flex-direction: column;
-  }
-
   .productos-images {
     flex-direction: column;
     margin-top: 35rem;
@@ -776,6 +800,13 @@ button {
 
   .presupuesto-content {
     flex-direction: column-reverse;
+  }
+  .home-content {
+    flex-direction: column;
+  }
+  .photos-wrapper {
+    flex-direction: column;
+    gap: 5rem;
   }
 }
 
@@ -1110,8 +1141,76 @@ button.download-btn {
   align-items: center;
 }
 
+.row {
+  flex-direction: row;
+}
+.column {
+  flex-direction: column;
+}
 .photos-wrapper {
   display: flex;
   align-items: center;
   gap: 13rem;
+}
+.historia-main-content {
+  width: 50%;
+}
+.historia-photo {
+  width: 15rem;
+}
+
+.historia-content {
+  justify-content: space-between;
+}
+.photo-right {
+  display: flex;
+  align-items: self-end;
+  justify-content: flex-end;
+}
+.historia-photo-content-left {
+  background-image: url('../public/foto_chicos3.jpeg');
+  background-size: 200px;
+  width: 12.5rem;
+  height: 12.5rem;
+  background-position-y: -22px;
+  transform: rotate(-8deg);
+  border: 6px solid rgb(242, 240, 236);
+  border-radius: 1px;
+  -webkit-box-shadow: 2px 2px 18px -7px rgba(0, 0, 0, 0.48);
+  -moz-box-shadow: 2px 2px 18px -7px rgba(0, 0, 0, 0.48);
+  box-shadow: 2px 2px 18px -7px rgba(0, 0, 0, 0.48);
+}
+
+.historia-photo-content-right {
+  background-image: url('../public/foto_chicos4.jpeg');
+  background-size: 200px;
+  width: 12.5rem;
+  height: 12.5rem;
+  background-position-y: -70px;
+  transform: rotate(8deg);
+  border: 6px solid rgb(242, 240, 236);
+  border-radius: 1px;
+  -webkit-box-shadow: 2px 2px 18px -7px rgba(0, 0, 0, 0.48);
+  -moz-box-shadow: 2px 2px 18px -7px rgba(0, 0, 0, 0.48);
+  box-shadow: 2px 2px 18px -7px rgba(0, 0, 0, 0.48);
+}
+
+.about-us {
+  h3 {
+    color: var(--main-red);
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 35px;
+    font-family: 'Franklin Gothic Condensed';
+  }
+}
+
+.compromise {
+  h3 {
+    color: var(--main-red);
+    text-align: center;
+    font-size: 20px;
+    margin: 35px 0px;
+    font-family: 'Franklin Gothic Condensed';
+  }
 }

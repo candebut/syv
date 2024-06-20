@@ -1,4 +1,4 @@
-import Title from '../components/Title'
+import Footer from '../components/Footer'
 import { motion } from "framer-motion";
 
 
@@ -56,6 +56,7 @@ const Inicio = () => {
                 <img src='./hoodie_girl.jpeg'></img>
             </motion.div> */}
         </motion.div>
+
     )
 }
 
