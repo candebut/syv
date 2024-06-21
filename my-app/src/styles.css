@@ -381,35 +381,6 @@ button:hover {
   box-shadow: inset -250px 0 0 0 black;
 }
 
-/* MEDIA QUERY */
-@media screen and (max-width: 600px) {
-  .general-container {
-    padding-top: 15rem;
-  }
-  .section--container {
-    margin-left: 15vw;
-  }
-
-  .section--container h1 {
-    font-size: 8rem;
-    letter-spacing: -6px;
-    line-height: 6rem;
-  }
-
-  .color-options {
-    margin-bottom: 20px;
-    flex-direction: column;
-    position: absolute;
-    top: 50%;
-    right: 40px;
-    transform: translateY(-50%);
-  }
-  ∫ .support--content {
-    top: -10%;
-    left: 0;
-  }
-}
-
 button {
   z-index: 50000;
 }
@@ -824,28 +795,6 @@ button {
   flex-direction: column;
   align-items: center;
   padding: 10rem;
-}
-
-@media (max-width: 800px) {
-  .header-wrapper {
-    flex-wrap: wrap;
-  }
-
-  .productos-images {
-    flex-direction: column;
-    margin-top: 35rem;
-  }
-
-  .presupuesto-content {
-    flex-direction: column-reverse;
-  }
-  .home-content {
-    flex-direction: column;
-  }
-  .photos-wrapper {
-    flex-direction: column;
-    gap: 5rem;
-  }
 }
 
 /* COPIED */
@@ -1288,4 +1237,80 @@ button.download-btn {
 }
 .font-353934 {
   color: #353934;
+}
+
+/* #MEDIA QUERYS */
+@media screen and (max-width: 800px) {
+  .home-wrapper {
+    width: 100%;
+    overflow-x: hidden;
+  }
+  .home-content {
+    padding-top: 30rem;
+  }
+  .historia-wrapper,
+  .productos-content {
+    padding-top: 10rem !important;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+  }
+  .leftside .content {
+    padding: 18px 25px;
+  }
+  .customizer {
+    margin-bottom: 0;
+  }
+  .section--container {
+    margin-left: 15vw;
+  }
+
+  .section--container h1 {
+    font-size: 8rem;
+    letter-spacing: -6px;
+    line-height: 6rem;
+  }
+
+  .color-options {
+    /* position: absolute;
+    top: 8px;
+    left: calc(50% - 120px); */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .clothes-color {
+    top: 222px;
+    left: 0;
+  }
+  .text-box {
+    width: 100%;
+  }
+
+  .header-wrapper {
+    flex-wrap: wrap;
+  }
+
+  .productos-images {
+    flex-direction: column;
+    margin-top: 35rem;
+  }
+
+  .presupuesto-content {
+    flex-direction: column-reverse;
+  }
+  .home-content {
+    flex-direction: column;
+  }
+  .photos-wrapper {
+    flex-direction: column;
+    gap: 5rem;
+  }
+
+  ∫ .support--content {
+    top: -10%;
+    left: 0;
+  }
 }

@@ -6,7 +6,7 @@ const Productos = ({ item, setItem }) => {
         setItem(item)
     }
     return (
-        <motion.div className='home-content'>
+        <motion.div className='home-content productos-content'>
             {item ? (
                 <div className='w-100 h-100'>
                     <Customizer customizeItem={customizeItem} item={item} />

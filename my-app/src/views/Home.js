@@ -54,7 +54,7 @@ const Home = () => {
     return (
         <div className='home-wrapper'>
             <Header selectedTab={selectedTab} setSelectedTab={setSelectedTab} tabs={tabs} />
-            <div className='general-wrapper'>{selectTab()}</div>
+            {selectTab()}
             <Footer />
         </div>
     )

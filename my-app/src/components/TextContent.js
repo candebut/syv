@@ -42,7 +42,7 @@ const TextContent = ({ text, setText }) => {
                 />
 
                 <input onChange={(e) => setText(e.target.value)} value={text} placeholder='Ingrese su texto' />
-                <div className="color-options">
+                <div className="color-options clothes-color">
                     {state.newColors.map((color) => (
                         <div key={color.label} className={`circle`} style={{ background: '#' + color.value }} onClick={() => (state.color = color.label)}></div>
                     ))}
