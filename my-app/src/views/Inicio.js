@@ -1,7 +1,28 @@
 import { motion } from "framer-motion";
+import { useEffect } from 'react';
 
 
 const Inicio = () => {
+    const importAll = (r) => {
+        const images = {};
+        r.keys().forEach((item) => {
+            images[item.replace('./', '')] = r(item);
+        });
+        return images;
+    };
+
+    const preloadImages = () => {
+        console.log('preloading imgs');
+        const images = importAll(
+            require.context('./', false, /\.(png|jpe?gsvg)$/)
+        );
+        Object.values(images).forEach((image) => {
+            const img = new Image();
+            img.src = typeof image === 'string' ? image : image.default;
+        })
+    }
+
+    useEffect(preloadImages, [])
     return (
         <motion.div className='home-content'>
             <div className='photos-wrapper'>
