@@ -441,6 +441,24 @@ button {
 .font-sprite {
   font-family: 'Sprite';
 }
+.font-chinook {
+  font-family: 'Chinook';
+}
+.font-handfine {
+  font-family: 'Handfine';
+}
+.font-nue-gothic {
+  font-family: 'Nue-Gothic';
+}
+.font-copperlate {
+  font-family: 'Copperlate';
+}
+.font-valenttiena {
+  font-family: 'Valenttiena';
+}
+.font-corp {
+  font-family: 'corp';
+}
 
 .font-10px {
   font-size: 10px;

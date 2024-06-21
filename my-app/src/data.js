@@ -29,6 +29,42 @@ export const fonts = [
             <p className='font-sprite'>Sprite Graffiti</p>
         ),
     },
+    {
+        value: 'chinook',
+        label: (
+            <p className='font-chinook'>Chinook</p>
+        ),
+    },
+    {
+        value: 'handfine',
+        label: (
+            <p className='font-handfine'>Handfine</p>
+        ),
+    },
+    {
+        value: 'nue-gothic',
+        label: (
+            <p className='font-nue-gothic'>Nue-Gothic</p>
+        ),
+    },
+    {
+        value: 'copperlate',
+        label: (
+            <p className='font-copperlate'>Copperlate</p>
+        ),
+    },
+    {
+        value: 'valenttiena',
+        label: (
+            <p className='font-valenttiena'>Valenttiena</p>
+        ),
+    },
+    {
+        value: 'corp',
+        label: (
+            <p className='font-corp'>Corp</p>
+        ),
+    },
 
 ];
 
