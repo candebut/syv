@@ -20,7 +20,7 @@ const Dropbox = ({ droppedImage, setDroppedImage, text, item, image }) => {
     };
 
     return (
-        <div className="main-img-div" ref={drop}>
+        <div className={`main-img-div ${item === 'Remera' || item === 'Buzo_redondo' ? 'bigger-clothes' : ''}`} ref={drop}>
             <img
                 src={image}
                 alt={image}

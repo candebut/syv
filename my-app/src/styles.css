@@ -677,6 +677,12 @@ button.download-btn {
   height: auto; */
 }
 
+.bigger-clothes {
+  img {
+    width: 70% !important;
+  }
+}
+
 .drop-div {
   position: absolute;
   width: 30%;
