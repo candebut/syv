@@ -615,8 +615,8 @@ button {
 }
 
 .presupuesto {
-  margin-top: 230px;
-  margin-bottom: 80px;
+  margin-top: 16.625rem;
+  margin-bottom: 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -762,6 +762,9 @@ button {
   display: flex;
   flex-direction: column;
   position: relative;
+  background-color: var(--main-blue);
+  color: white;
+  padding: 5px 30px;
 
   h1 {
     font-family: 'Franklin Gothic Condensed';
@@ -781,6 +784,11 @@ button {
     bottom: 0;
     right: -85px;
     transform: rotate(-8deg);
+  }
+  h5,
+  p {
+    font-size: 16px;
+    font-family: 'Arial';
   }
 }
 
