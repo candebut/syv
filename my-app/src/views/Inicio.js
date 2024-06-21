@@ -38,22 +38,6 @@ const Inicio = () => {
                     <h3 className='photo-portrait-text business'>Business</h3>
                 </div>
             </div>
-
-            {/* <motion.div className='semi-circle' initial={{
-                opacity: 0,
-                // if odd index card,slide from right instead of left
-                x: -50
-            }}
-                whileInView={{
-                    opacity: 1,
-                    x: 0, // Slide in to its original position
-                    transition: {
-                        duration: 1 // Animation duration
-                    }
-                }}
-                viewport={{ once: true }}>
-                <img src='./hoodie_girl.jpeg'></img>
-            </motion.div> */}
         </motion.div>
 
     )
