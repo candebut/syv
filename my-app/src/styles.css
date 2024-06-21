@@ -615,7 +615,6 @@ button {
 }
 
 .presupuesto {
-  margin-top: 16.625rem;
   margin-bottom: 5rem;
   display: flex;
   flex-direction: column;
@@ -628,6 +627,7 @@ button {
 }
 
 .presupuesto-wrapper {
+  padding-top: 24rem;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -757,14 +757,24 @@ button {
   align-items: center;
   cursor: pointer;
 }
-
+.presupuesto-textbox {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: white;
+  color: black;
+  padding: 10px 30px;
+  h5,
+  ul {
+    font-size: 16px;
+    font-family: 'Arial';
+    margin-top: 0;
+  }
+}
 .productos-text {
   display: flex;
   flex-direction: column;
   position: relative;
-  background-color: var(--main-blue);
-  color: white;
-  padding: 5px 30px;
 
   h1 {
     font-family: 'Franklin Gothic Condensed';
@@ -784,11 +794,6 @@ button {
     bottom: 0;
     right: -85px;
     transform: rotate(-8deg);
-  }
-  h5,
-  p {
-    font-size: 16px;
-    font-family: 'Arial';
   }
 }
 

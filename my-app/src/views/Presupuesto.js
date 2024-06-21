@@ -1,5 +1,8 @@
 import { motion } from "framer-motion";
 const Presupuesto = () => {
+    const openForm = () => {
+        console.log('opening form!')
+    }
     return (
         <motion.div className='presupuesto-wrapper' initial={{
             opacity: 0,
@@ -10,7 +13,7 @@ const Presupuesto = () => {
             viewport={{ once: true }}>
             <div className='presupuesto'>
                 <h1>Presupuesto</h1>
-                <div className='productos-text'>
+                <div className='presupuesto-textbox'>
                     <h5>En Lobis, nos esforzamos por ofrecerte un presupuesto transparente y adaptado a tus necesidades. Calculamos el valor del pedido considerando varios factores:
                     </h5>
                     <ul>
@@ -19,6 +22,8 @@ const Presupuesto = () => {
                         <li>Diseño de Bordado: Nuestro bordado estándar incluye un diseño en el frente y otro en el dorso. Si tienes un logotipo o texto específico, indícanoslo para ajustar el presupuesto.</li>
                     </ul>
                 </div>
+                <p className='form-hint font-valenttiena'>Rel lena el formulario y te enviamos un presupuesto!</p>
+                <button className='form-button font-copperlate' onClick={() => openForm()}>Formulario</button>
                 <motion.div className='presupuesto-content' initial={{
                     opacity: 0,
                     // if odd index card,slide from right instead of left
