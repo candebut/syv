@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import Footer from '../components/Footer'
 const Historia = () => {
     return (
         <motion.div className='historia-wrapper' initial={{
