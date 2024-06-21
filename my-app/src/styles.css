@@ -1246,11 +1246,17 @@ button.download-btn {
     overflow-x: hidden;
   }
   .home-content {
+    padding-top: 23rem;
+  }
+  .productos-wrapper {
     padding-top: 30rem;
   }
   .historia-wrapper,
   .productos-content {
     padding-top: 10rem !important;
+  }
+  .historia-wrapper {
+    margin-bottom: 10rem;
   }
   .container {
     display: flex;
@@ -1295,11 +1301,23 @@ button.download-btn {
 
   .productos-images {
     flex-direction: column;
-    margin-top: 35rem;
   }
-
+  .product-image {
+    height: 17rem;
+  }
+  .contacto-wrapper {
+    padding-top: 15rem;
+    padding: 0;
+    div {
+      padding: 3rem;
+    }
+  }
+  .presupuesto-wrapper {
+    padding-top: 6rem;
+  }
   .presupuesto-content {
-    flex-direction: column-reverse;
+    flex-direction: column;
+    padding-bottom: 5rem;
   }
   .home-content {
     flex-direction: column;
