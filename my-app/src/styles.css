@@ -55,6 +55,26 @@ html {
   src: local('Handfine'), url('./fonts/Handfine.otf') format('opentype');
 }
 
+@font-face {
+  font-family: 'Handfine';
+  src: local('Handfine'), url('./fonts/Handfine.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Nue-Gothic';
+  src: local('Nue-Gothic'), url('./fonts/Nue-Gothic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Valenttiena';
+  src: local('Valenttiena'), url('./fonts/Valenttiena.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'corp';
+  src: local('corp'), url('./fonts/corp.ttf') format('truetype');
+}
+
 * {
   box-sizing: border-box;
 }
@@ -1215,6 +1235,9 @@ button.download-btn {
     font-size: 20px;
     margin: 35px 0px;
     font-family: 'Franklin Gothic Condensed';
+  }
+  p {
+    font-family: 'Arial';
   }
 }
 

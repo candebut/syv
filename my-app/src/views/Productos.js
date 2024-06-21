@@ -63,7 +63,7 @@ const Productos = ({ item, setItem }) => {
                                 viewport={{ once: true }} className='product-image'>
                                 <img src="./Campera_negro.png" alt="campera" />
                             </motion.div>
-                            <motion.div onClick={() => customizeItem('Buzo redondo')} whileHover={{ scale: 1.2 }} initial={{
+                            <motion.div onClick={() => customizeItem('Buzo_redondo')} whileHover={{ scale: 1.2 }} initial={{
                                 opacity: 0,
                                 y: -100,
                             }}
