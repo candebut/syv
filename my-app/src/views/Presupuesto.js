@@ -1,7 +1,13 @@
 import { motion } from "framer-motion";
+import { useState } from 'react';
+import TypeformEmbed from '../components/TypeformEmbed';
+import Modal from '../components/Modal'
+
 const Presupuesto = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
     const openForm = () => {
-        console.log('opening form!')
+        setIsOpen(true);
     }
     return (
         <motion.div className='presupuesto-wrapper' initial={{
@@ -12,6 +18,7 @@ const Presupuesto = () => {
             }}
             viewport={{ once: true }}>
             <div className='presupuesto'>
+                {isOpen ? <Modal setIsOpen={() => setIsOpen()}><TypeformEmbed /></Modal> : null}
                 <h1>Presupuesto</h1>
                 <div className='presupuesto-textbox'>
                     <h5>En Lobis, nos esforzamos por ofrecerte un presupuesto transparente y adaptado a tus necesidades. Calculamos el valor del pedido considerando varios factores:
@@ -23,7 +30,7 @@ const Presupuesto = () => {
                     </ul>
                 </div>
                 <p className='form-hint font-valenttiena'>Rel lena el formulario y te enviamos un presupuesto!</p>
-                <button className='form-button font-copperlate' onClick={() => openForm()}>Formulario</button>
+                <button className='form-button font-copperlate' onClick={() => setIsOpen(true)}>Formulario</button>
                 <motion.div className='presupuesto-content' initial={{
                     opacity: 0,
                     // if odd index card,slide from right instead of left

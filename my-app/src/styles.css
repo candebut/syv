@@ -122,7 +122,7 @@ footer {
 }
 
 .text-box {
-  z-index: 100000;
+  z-index: 3;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -230,10 +230,6 @@ button:hover {
 .circle:hover {
   transform: scale(1.2);
   cursor: pointer;
-}
-
-button {
-  z-index: 50000;
 }
 
 /* FONTS */
@@ -794,6 +790,45 @@ button.download-btn {
   p {
     font-family: 'Arial';
   }
+}
+
+/* #MODAL */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  z-index: 1001;
+  border-radius: 8px;
+  width: 70%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.close-button {
+  z-index: 5;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.modal-content {
+  margin-top: 30px;
 }
 
 /* FONT COLOR */
