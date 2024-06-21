@@ -595,6 +595,7 @@ button {
   align-items: center;
   justify-content: center;
   overflow-y: scroll;
+  padding-bottom: 2rem;
 }
 
 .presupuesto-box {
@@ -827,6 +828,7 @@ h1 {
 .container .leftside {
   background-color: var(--main-blue);
   display: flex;
+  height: auto;
 }
 
 /* leftside > sidebar */
@@ -1096,9 +1098,10 @@ button.download-btn {
 
 .main-img-div img {
   max-width: 100%;
-  /*max-height: 100%; */
-  width: 40rem;
-  height: auto;
+  max-height: 100%;
+  width: 90%;
+  /* width: 40rem;
+  height: auto; */
 }
 
 .drop-div {
