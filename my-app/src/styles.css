@@ -152,6 +152,19 @@ canvas {
   position: absolute;
   z-index: 1000;
 }
+.menu-wrapper {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+  ul {
+    padding-left: 10px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
 header {
   display: flex;
   justify-content: space-between;
@@ -897,17 +910,16 @@ button.download-btn {
     overflow-x: hidden;
   }
   .home-content {
-    padding-top: 23rem;
+    padding-top: 10rem;
   }
   .productos-wrapper {
-    padding-top: 30rem;
-  }
-  .historia-wrapper,
-  .productos-content {
-    padding-top: 10rem !important;
+    padding-top: 20rem;
   }
   .historia-wrapper {
-    margin-bottom: 10rem;
+    height: auto;
+  }
+  .productos-content {
+    padding-top: 10rem !important;
   }
   .container {
     display: flex;
@@ -962,6 +974,14 @@ button.download-btn {
     div {
       padding: 3rem;
     }
+  }
+  .contacto-photo {
+    display: none;
+    bottom: -10rem;
+  }
+  .rainbow {
+    display: inline;
+    bottom: 0;
   }
   .presupuesto-wrapper {
     padding-top: 42rem;

@@ -6,6 +6,7 @@ import Presupuesto from './Presupuesto'
 import Contacto from './Contacto'
 import Productos from './Productos'
 import Footer from '../components/Footer'
+import DropdownMenu from '../components/DropdownMenu';
 
 const tabs = [
     {
@@ -33,6 +34,7 @@ const Home = () => {
 
     const [selectedTab, setSelectedTab] = useState('inicio');
     const [item, setItem] = useState(null);
+    const isMobile = window.screen.width < 900;
 
     const selectTab = () => {
         switch (selectedTab) {
@@ -53,9 +55,9 @@ const Home = () => {
 
     return (
         <div className='home-wrapper'>
-            <Header selectedTab={selectedTab} setSelectedTab={setSelectedTab} tabs={tabs} />
+            {isMobile ? <DropdownMenu tabs={tabs} selectedTab={selectedTab} setSelectedTab={setSelectedTab} /> : <Header selectedTab={selectedTab} setSelectedTab={setSelectedTab} tabs={tabs} />}
             {selectTab()}
-            {selectedTab === 'presupuesto' ? null : <Footer />}
+            {selectedTab === 'presupuesto' || isMobile ? null : <Footer />}
         </div>
     )
 }
