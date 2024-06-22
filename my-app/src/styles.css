@@ -427,6 +427,7 @@ button:hover {
   align-items: center;
   justify-content: center;
   overflow-y: scroll;
+  overflow-x: hidden;
   padding-bottom: 2rem;
 }
 
@@ -914,6 +915,7 @@ button.download-btn {
     padding-top: 10rem;
     height: 100%;
     overflow-y: scroll;
+    overflow-x: hidden;
   }
   .productos-wrapper {
     padding-top: 20rem;
@@ -922,10 +924,12 @@ button.download-btn {
     padding-top: 10rem;
     height: 100%;
     overflow-y: scroll;
+    overflow-x: hidden;
   }
   .productos-content {
     padding-top: 10rem !important;
     overflow-y: scroll;
+    overflow-x: hidden;
     height: 100%;
   }
   .photo-left {
