@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from 'react';
 import TypeformEmbed from '../components/TypeformEmbed';
 import Modal from '../components/Modal'
+import Footer from '../components/Footer'
 
 const Presupuesto = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -24,7 +25,7 @@ const Presupuesto = () => {
                     <h5>En Lobis, nos esforzamos por ofrecerte un presupuesto transparente y adaptado a tus necesidades. Calculamos el valor del pedido considerando varios factores:
                     </h5>
                     <ul>
-                        <li>Tipo de Prenda: Elige la prenda que deseas personalizar: buzos, camisetas, camperas u otras opciones. Cada tipo de prenda tiene un costo base.</li>
+                        <li>Tipo de Prenda: Elige la prenda que deseas personalizar: buzos, remeras, camperas u otras opciones. Cada tipo de prenda tiene un costo base.</li>
                         <li>Cantidad de Prendas: Cuantas más prendas solicites, mayor será el descuento por volumen.</li>
                         <li>Diseño de Bordado: Nuestro bordado estándar incluye un diseño en el frente y otro en el dorso. Si tienes un logotipo o texto específico, indícanoslo para ajustar el presupuesto.</li>
                     </ul>
@@ -72,9 +73,9 @@ const Presupuesto = () => {
 
                     <p className='patua presupuesto-text'>prenda +  bordado
                         de 28cm x 38cm</p>
+                    <Footer fixed={false} />
                 </motion.div>
             </div>
-
 
         </motion.div>
 

@@ -112,6 +112,10 @@ footer {
   }
 }
 
+.force-position {
+  position: unset !important;
+}
+
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -305,6 +309,8 @@ button:hover {
   padding: 20px 30px;
   border-radius: 50px;
   color: white;
+  width: 150px;
+  text-align: center;
 }
 
 .inverted-tab {
@@ -379,7 +385,8 @@ button:hover {
 }
 
 .historia-wrapper {
-  background-color: white;
+  background-image: url('../public/paper.PNG');
+  background-size: cover;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -387,7 +394,6 @@ button:hover {
 }
 
 .presupuesto {
-  margin-bottom: 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -546,7 +552,7 @@ button:hover {
   align-items: center;
   padding: 0px 10rem;
   div {
-    padding: 5rem;
+    padding: 3rem;
     color: white;
     background-color: var(--main-blue);
     h1 {
@@ -556,6 +562,37 @@ button:hover {
   p {
     text-align: center;
   }
+  a {
+    font-weight: 800;
+    color: white;
+  }
+}
+.contacto-photo {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-image: url('../public/foto_chicos7.jpeg');
+  background-size: 200px;
+  width: 12.5rem;
+  height: 14.5rem;
+  background-position-y: -70px;
+  transform: rotate(-4deg);
+  border: 10px solid #d0ebc8;
+  border-radius: 1px;
+  -webkit-box-shadow: 2px 2px 18px -7px rgba(0, 0, 0, 0.48);
+  -moz-box-shadow: 2px 2px 18px -7px rgba(0, 0, 0, 0.48);
+  box-shadow: 2px 2px 18px -7px rgba(0, 0, 0, 0.48);
+}
+.rainbow {
+  background-image: url('../public/rainbow.webp');
+  border: none;
+  background-size: unset;
+  background-position: unset;
+  bottom: 9rem;
+  right: 1rem;
+  transform: rotate(-30deg);
+  width: 264px;
+  box-shadow: none;
 }
 
 /* COPIED */

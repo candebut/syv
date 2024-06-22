@@ -55,7 +55,7 @@ const Home = () => {
         <div className='home-wrapper'>
             <Header selectedTab={selectedTab} setSelectedTab={setSelectedTab} tabs={tabs} />
             {selectTab()}
-            <Footer />
+            {selectedTab === 'presupuesto' ? null : <Footer />}
         </div>
     )
 }
