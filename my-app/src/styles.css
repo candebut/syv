@@ -917,10 +917,16 @@ button.download-btn {
     padding-top: 20rem;
   }
   .historia-wrapper {
-    height: auto;
+    padding-top: 10rem;
+    height: 100%;
   }
   .productos-content {
     padding-top: 10rem !important;
+    overflow: scroll;
+    height: 100%;
+  }
+  .photo-left {
+    margin-right: 20px;
   }
   .container {
     display: flex;
