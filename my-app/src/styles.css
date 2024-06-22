@@ -913,7 +913,7 @@ button.download-btn {
   .home-content {
     padding-top: 10rem;
     height: 100%;
-    overflow: scroll;
+    overflow-y: scroll;
   }
   .productos-wrapper {
     padding-top: 20rem;
@@ -921,11 +921,11 @@ button.download-btn {
   .historia-wrapper {
     padding-top: 10rem;
     height: 100%;
-    overflow: scroll;
+    overflow-y: scroll;
   }
   .productos-content {
     padding-top: 10rem !important;
-    overflow: scroll;
+    overflow-y: scroll;
     height: 100%;
   }
   .photo-left {
