@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-const Contacto = () => {
+const Contacto = ({ isMobile }) => {
     return (
         <div className='contacto-main-wrapper'>
             <motion.div className='contacto-wrapper' initial={{
@@ -30,36 +30,40 @@ const Contacto = () => {
                     </ul>
                 </div>
             </motion.div>
-            <div className='contacto-photo photo-right'>
-                <motion.div initial={{
-                    opacity: 0,
-                    y: -100,
-                }}
-                    whileInView={{
-                        opacity: 1,
-                        y: 0,
-                        rotate: 8,
-                        transition: {
-                            duration: .5
-                        }
-                    }}
-                    viewport={{ once: true }}></motion.div>
-            </div>
-            <div className='contacto-photo rainbow'>
-                <motion.div initial={{
-                    opacity: 0,
-                    y: -100,
-                }}
-                    whileInView={{
-                        opacity: 1,
-                        y: 0,
-                        rotate: 8,
-                        transition: {
-                            duration: .5
-                        }
-                    }}
-                    viewport={{ once: true }}></motion.div>
-            </div>
+            {isMobile ? null : (
+                <>
+                    <div className='contacto-photo photo-right'>
+                        <motion.div initial={{
+                            opacity: 0,
+                            y: -100,
+                        }}
+                            whileInView={{
+                                opacity: 1,
+                                y: 0,
+                                rotate: 8,
+                                transition: {
+                                    duration: .5
+                                }
+                            }}
+                            viewport={{ once: true }}></motion.div>
+                    </div>
+                    <div className='contacto-photo rainbow'>
+                        <motion.div initial={{
+                            opacity: 0,
+                            y: -100,
+                        }}
+                            whileInView={{
+                                opacity: 1,
+                                y: 0,
+                                rotate: 8,
+                                transition: {
+                                    duration: .5
+                                }
+                            }}
+                            viewport={{ once: true }}></motion.div>
+                    </div>
+                </>
+            )}
         </div>
     )
 }

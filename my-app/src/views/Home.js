@@ -47,7 +47,7 @@ const Home = () => {
             case 'presupuesto':
                 return <Presupuesto />
             case 'contacto':
-                return <Contacto />
+                return <Contacto isMobile={isMobile} />
             default:
                 return <Inicio />
         }
