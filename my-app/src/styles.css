@@ -340,6 +340,7 @@ button:hover {
 
 .home-wrapper {
   height: 100vh;
+  overflow: hidden;
 }
 
 .lato {
@@ -907,7 +908,7 @@ button.download-btn {
 @media screen and (max-width: 800px) {
   .home-wrapper {
     width: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
   }
   .home-content {
     padding-top: 10rem;
