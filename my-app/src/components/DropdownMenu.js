@@ -1,14 +1,34 @@
 import { IoMenu, IoClose } from "react-icons/io5";
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Tab from './Tab';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const DropdownMenu = ({ tabs, selectedTab, setSelectedTab }) => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const menuRef = useRef(null);
+
+    const handleClickOutside = (event) => {
+        if (menuRef.current && !menuRef.current.contains(event.target)) {
+            setMenuOpen(false);
+        }
+    };
+
+    useEffect(() => {
+        if (menuOpen) {
+            document.addEventListener('mousedown', handleClickOutside);
+        } else {
+            document.removeEventListener('mousedown', handleClickOutside);
+        }
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [menuOpen]);
 
     return (
-        <div className='menu-wrapper'>
-            <button className='menu-button' onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <IoClose /> : <IoMenu />}</button>
+        <div className='menu-wrapper' ref={menuRef}>
+            <button className='menu-button' onClick={() => setMenuOpen(!menuOpen)}>
+                {menuOpen ? <IoClose /> : <IoMenu />}
+            </button>
             <AnimatePresence>
                 {menuOpen && (
                     <motion.ul
