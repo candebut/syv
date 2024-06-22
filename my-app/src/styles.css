@@ -359,7 +359,9 @@ button:hover {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  height: 90vh;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .photo-box {
@@ -401,7 +403,9 @@ button:hover {
 .historia-wrapper {
   background-image: url('../public/paper.PNG');
   background-size: cover;
-  height: 100vh;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -483,7 +487,6 @@ button:hover {
 }
 
 .productos-wrapper {
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -914,23 +917,16 @@ button.download-btn {
   .home-content {
     padding-top: 10rem;
     height: 100%;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    flex-direction: column;
   }
   .productos-wrapper {
     padding-top: 20rem;
   }
   .historia-wrapper {
     padding-top: 10rem;
-    height: 100%;
-    overflow-y: scroll;
-    overflow-x: hidden;
   }
   .productos-content {
     padding-top: 10rem !important;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    height: 100%;
   }
   .photo-left {
     margin-right: 20px;
@@ -1004,8 +1000,8 @@ button.download-btn {
     flex-direction: column;
     padding-bottom: 5rem;
   }
-  .home-content {
-    flex-direction: column;
+  .presupuesto-text {
+    display: none;
   }
   .photos-wrapper {
     flex-direction: column;
