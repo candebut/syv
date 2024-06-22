@@ -405,6 +405,8 @@ button:hover {
 }
 
 .presupuesto-wrapper {
+  background-image: url('../public/paper.PNG');
+  background-size: cover;
   padding-top: 24rem;
   height: 100vh;
   display: flex;
@@ -483,7 +485,6 @@ button:hover {
   display: flex;
   flex-direction: column;
   position: relative;
-  background-color: white;
   color: black;
   padding: 10px 30px;
   h5,
