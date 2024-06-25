@@ -70,7 +70,7 @@ function Customizer({ customizeItem, item }) {
             <div className="container">
                 <div className="leftside">
                     <div className="content">
-                        <TextContent text={text} setText={setText} />
+                        <TextContent text={text} setText={setText} item={item} />
                     </div>
                 </div>
                 <div className="rightside">

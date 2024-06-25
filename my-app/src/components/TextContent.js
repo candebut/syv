@@ -2,7 +2,7 @@ import { state } from '../store'
 import { fonts, fontSizes } from '../data'
 import Select from 'react-select'
 
-const TextContent = ({ text, setText }) => {
+const TextContent = ({ text, setText, item }) => {
     const customStyles = {
         control: (provided) => ({
             ...provided,
@@ -43,7 +43,9 @@ const TextContent = ({ text, setText }) => {
 
                 <input onChange={(e) => setText(e.target.value)} value={text} placeholder='Ingrese su texto' />
                 <div className="color-options clothes-color">
-                    {state.newColors.map((color) => (
+                    {item !== 'Campera' ? state.newColors.map((color) => (
+                        <div key={color.label} className={`circle`} style={{ background: '#' + color.value }} onClick={() => (state.color = color.label)}></div>
+                    )) : state.camperaColors.map((color) => (
                         <div key={color.label} className={`circle`} style={{ background: '#' + color.value }} onClick={() => (state.color = color.label)}></div>
                     ))}
                 </div>

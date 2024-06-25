@@ -63,7 +63,30 @@ const state = proxy({
             value: '000000'
         },
 
-    ]
+    ],
+    camperaColors: [
+        {
+            label: 'adoquin',
+            value: '363c3c'
+        },
+        {
+            label: 'blanco',
+            value: 'ffffff'
+        },
+        {
+            label: 'topo',
+            value: '373633'
+        },
+        {
+            label: 'marino',
+            value: '23243c'
+        },
+        {
+            label: 'negro',
+            value: '000000'
+        },
+
+    ],
 })
 
 export { state }
