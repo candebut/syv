@@ -745,9 +745,16 @@ button.download-btn {
   overflow: hidden;
 }
 
-.drop-div.tshirt {
+.drop-div.Remera {
   top: 24%;
-  left: 131px;
+  /* left: 131px; */
+}
+
+.drop-div.Buzo,
+.drop-div.Buzo_redondo,
+.drop-div.Campera {
+  top: 24%;
+  right: 37%;
 }
 
 .drop-div img {

@@ -26,7 +26,8 @@ const Dropbox = ({ droppedImage, setDroppedImage, text, item, image }) => {
                 alt={image}
             />
             <div
-                className='drop-div tshirt'
+                className={`drop-div ${item}`}
+                // className='drop-div tshirt'
                 style={{ border: isOver ? "3px solid #6db5e7" : "0px" }}
             >
                 {droppedImage && (
